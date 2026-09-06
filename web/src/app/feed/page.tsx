@@ -17,7 +17,7 @@ export default function FeedPage() {
       <Nav />
       <main className={cn("mx-auto max-w-[1240px] px-5 md:px-7", stories && "max-w-none px-0")}>
         {!stories && <div className="flex flex-wrap items-end justify-between gap-4 pt-10 pb-3">
-          <div><div className="eyebrow mb-2">Feed</div><h1 className="text-[clamp(30px,3.6vw,46px)] font-medium">Personas que ya <em className="italic text-coral">se analizaron.</em></h1><p className="mt-2 max-w-[60ch] text-muted-foreground">Cada tarjeta resume un informe real: lectura global, estación de color, forma de cara y lo que juega a su favor.</p></div>
+          <div><div className="eyebrow mb-2">Feed</div><h1 className="text-[clamp(30px,3.6vw,46px)] font-medium">Personas que ya <span className="gradient-text">se analizaron.</span></h1><p className="mt-2 max-w-[60ch] text-muted-foreground">Cada tarjeta resume un informe real: lectura global, estación de color, forma de cara y lo que juega a su favor.</p></div>
           <Tabs on={stories} set={setStories} />
         </div>}
         {stories && <div className="fixed top-[68px] right-4 z-20"><Tabs on={stories} set={setStories} /></div>}
@@ -39,11 +39,11 @@ export function FeedCard({ x, story }: { x: FeedItem; story?: boolean }) {
     <Link href={`/report/${x.stem}`} className={cn("relative block overflow-hidden bg-secondary text-white shadow-soft", story ? "mx-auto h-[calc(100vh-60px)] max-w-[560px] snap-start" : "aspect-[9/16] rounded-[28px]")}>
       {x.face && <img src={out(x.face)} alt="" className="absolute inset-0 size-full object-cover" />}
       <div className="absolute top-3.5 right-3.5 left-3.5 flex items-center justify-between gap-2">
-        <span className="flex items-center gap-2 rounded-full bg-ink/55 py-1.5 pr-3 pl-1.5 text-[13px] font-semibold backdrop-blur"><span className="flex size-6 items-center justify-center rounded-full bg-coral text-[11px]">{(x.name || "?")[0].toUpperCase()}</span>{x.name || "Anónimo"}</span>
+        <span className="flex items-center gap-2 rounded-full bg-black/55 py-1.5 pr-3 pl-1.5 text-[13px] font-semibold backdrop-blur"><span className="flex size-6 items-center justify-center rounded-full bg-coral text-[11px]">{(x.name || "?")[0].toUpperCase()}</span>{x.name || "Anónimo"}</span>
         {x.global != null && <span className="rounded-full bg-paper px-3 py-1.5 text-[14px] font-bold text-ink">{x.global}<small className="ml-1 font-medium text-muted-foreground">/100</small></span>}
       </div>
-      <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-ink/90 via-ink/60 to-transparent p-5 pt-16">
-        <h3 className={cn("font-display font-medium leading-tight", story ? "text-[30px]" : "text-[22px]")}>{x.headline || "Análisis facial"}</h3>
+      <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-5 pt-16">
+        <h3 className={cn("font-display leading-tight", story ? "text-[30px]" : "text-[22px]")}>{x.headline || "Análisis facial"}</h3>
         <p className={cn("mt-1.5 mb-2.5 opacity-90", story ? "text-[15px]" : "text-[13px]")}>{x.strength ? simplify(x.strength) : ""}</p>
         <div className="flex flex-wrap gap-1.5 text-[11px] font-semibold">
           {x.season && <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 backdrop-blur"><i className="size-2 rounded-full" style={{ background: x.season_hex || "#fff" }} />{x.season}</span>}

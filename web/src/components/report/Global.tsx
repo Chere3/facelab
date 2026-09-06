@@ -15,7 +15,7 @@ export function Global({ R }: { R: Report }) {
   const worst = [...entries].sort((a, b) => a[1] - b[1])[0];
   return (
     <Section id="global">
-      <SectionHead eyebrow="Lectura global" title={<>Una cifra, <em className="italic text-coral">con todo lo que la compone.</em></>}
+      <SectionHead eyebrow="Lectura global" title={<>Una cifra, <span className="gradient-text">con todo lo que la compone.</span></>}
         lede={<Simple>Siete marcos medidos, uno al lado del otro. No es una nota: te dice qué pesa más en tu caso.</Simple>} />
       <div className="mt-6 grid gap-5 md:grid-cols-2">
         <Card>
@@ -26,7 +26,7 @@ export function Global({ R }: { R: Report }) {
               <p className="mt-1 text-[15px] leading-snug">Lo que más suma: <b>{COMP[best[0]] || best[0]}</b>. Donde hay más margen: <b>{COMP[worst[0]] || worst[0]}</b>.</p>
             </div>
           </div>
-          <RadarScore data={entries.map(([k, v]) => ({ k: COMP[k] || k, v: Math.round(v) }))} className="mx-auto mt-2 aspect-square w-full max-w-[320px]" />
+          <RadarScore data={entries.map(([k, v]) => ({ k: COMP[k] || k, v: Math.round(v) }))} className="mx-auto mt-2 block w-full max-w-[340px]" />
           <Sci>
             <table className="mt-2 w-full border-collapse text-[13px]">
               <tbody>{entries.map(([k, v]) => (

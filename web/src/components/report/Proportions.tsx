@@ -18,7 +18,7 @@ export function Proportions({ R, stepState, stepDetail }: { R: Report; stepState
   const thirds = (o: Record<string, number>) => [{ k: "upper", v: o.upper ?? o.upper_proxy, label: "frente" }, { k: "middle", v: o.middle, label: "nariz" }, { k: "lower", v: o.lower, label: "boca y mentón" }];
   return (
     <Section id="proporciones">
-      <SectionHead eyebrow="Proporciones" title={<>Tercios <em className="italic text-coral">y quintos.</em></>} lede="El canon divide la cara en tres alturas y cinco anchuras iguales. Casi nadie lo cumple; lo útil es ver dónde te alejas." />
+      <SectionHead eyebrow="Proporciones" title={<>Tercios <span className="gradient-text">y quintos.</span></>} lede="El canon divide la cara en tres alturas y cinco anchuras iguales. Casi nadie lo cumple; lo útil es ver dónde te alejas." />
       <div className="mt-6 grid gap-6 md:grid-cols-2">
         <div><Photo src={out(R.assets?.guides)} ratio="4/5" alt="Guías" /><Cap>Horizontales: frente, glabela, subnasal, mentón. Verticales: cantos de los ojos.</Cap></div>
         <div className="space-y-4">

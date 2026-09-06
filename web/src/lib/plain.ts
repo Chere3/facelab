@@ -124,7 +124,7 @@ const JARGON: [RegExp, string][] = [
   [/\bFWHR\b/g, "anchura frente a altura de la cara"], [/\bratio\b/gi, "proporción"], [/\btilt cantal\b/gi, "inclinación de los ojos"], [/\bcantal\b/gi, "de los ojos"],
   [/\bintercantal\b/gi, "entre los ojos"], [/\bbigonial\b/gi, "de mandíbula"], [/\bbizigomátic[ao]\b/gi, "de pómulos"], [/\bmesoprosópic[ao]\b/gi, "de proporción media"],
   [/\bleptoprosópic[ao]\b/gi, "alargada"], [/\beuriprosópic[ao]\b/gi, "ancha"], [/\bmesorrin[ao]\b/gi, "de anchura media"], [/\bnasofrontal\b/gi, "entre frente y nariz"], [/\bnasolabial\b/gi, "entre nariz y labio"],
-  [/\bmentolabial\b/gi, "entre labio y mentón"], [/\bgrupo de referencia\b/gi, "tu grupo"], [/\bpercentil típico\b/gi, "zona típica"], [/\bdimorfismo de forma\b/gi, "rasgos más marcados"],
+  [/\bmentolabial\b/gi, "entre labio y mentón"], [/\bdel grupo de referencia\b/gi, "de tu grupo"], [/\bal grupo de referencia\b/gi, "a tu grupo"], [/\bel grupo de referencia\b/gi, "tu grupo"], [/\bgrupo de referencia\b/gi, "tu grupo"], [/["']?all\|all["']?/g, "general"], [/\bdel tu grupo\b/g, "de tu grupo"], [/\bal tu grupo\b/g, "a tu grupo"], [/\bel tu grupo\b/gi, "tu grupo"], [/\bpercentil típico\b/gi, "zona típica"], [/\bdimorfismo de forma\b/gi, "rasgos más marcados"],
   [/\baverageness\b/gi, "armonía"], [/\bproporcionalidad\b/gi, "proporción"], [/\bfiltrum\b/gi, "espacio entre nariz y labio"], [/\blandmarks?\b/gi, "puntos de la cara"], [/\bsegmentación\b/gi, "detección"],
 ];
 export function simplify(t: string): string {

@@ -13,7 +13,7 @@ export function Symmetry({ R, stepState, stepDetail }: { R: Report; stepState: (
   const per = Object.entries(sy.per_landmark_pct || {}).sort((a, b) => b[1] - a[1]).slice(0, 6);
   return (
     <Section id="simetria">
-      <SectionHead eyebrow="Simetría" title={<>Tu lado derecho <em className="italic text-coral">y tu lado izquierdo.</em></>} lede="Nadie es simétrico. Estas dos caras se construyen duplicando cada mitad; la diferencia entre ellas es tu asimetría." />
+      <SectionHead eyebrow="Simetría" title={<>Tu lado derecho <span className="gradient-text">y tu lado izquierdo.</span></>} lede="Nadie es simétrico. Estas dos caras se construyen duplicando cada mitad; la diferencia entre ellas es tu asimetría." />
       <div className="mt-6 grid grid-cols-3 gap-3">
         <div><Photo src={out(R.assets?.mirror_left)} /><Cap>Mitad izquierda, duplicada</Cap></div>
         <div><Photo src={out(R.assets?.face)} /><Cap>Original</Cap></div>

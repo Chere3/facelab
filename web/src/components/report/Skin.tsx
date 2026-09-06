@@ -22,7 +22,7 @@ export function Skin({ R, stepState }: { R: Report; stepState: (id: string) => s
   const pctLabel = (p?: number) => { const b = band(p); return !b ? "sin normas" : b === "mid" ? "como tu grupo" : (b === "lo" || b === "lo2") ? `menos que tu grupo` : `más que tu grupo`; };
   return (
     <Section id="piel">
-      <SectionHead eyebrow="Piel" title={<>Mapas <em className="italic text-coral">de piel.</em></>} lede={<><Simple>Cuatro mapas de calor sobre tu piel. Cuanto más bajo, mejor: aquí «menos que tu grupo» es buena noticia.</Simple><Sci>Rojez, manchas, textura y brillo con percentiles frente a fotos de tu grupo con luz variada, así que son orientativos.</Sci></>} />
+      <SectionHead eyebrow="Piel" title={<>Mapas <span className="gradient-text">de piel.</span></>} lede={<><Simple>Cuatro mapas de calor sobre tu piel. Cuanto más bajo, mejor: aquí «menos que tu grupo» es buena noticia.</Simple><Sci>Rojez, manchas, textura y brillo con percentiles frente a fotos de tu grupo con luz variada, así que son orientativos.</Sci></>} />
       {k?.maps ? (
         <>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">

@@ -22,7 +22,7 @@ export default function PeoplePage() {
       <Nav />
       <main className="mx-auto max-w-[1240px] px-5 md:px-7">
         <div className="flex flex-wrap items-end justify-between gap-4 pt-10 pb-6">
-          <div><div className="eyebrow mb-2">Personas</div><h1 className="text-[clamp(30px,3.6vw,46px)] font-medium">Personas <em className="italic text-coral">y seguimiento.</em></h1><p className="mt-2 max-w-[60ch] text-muted-foreground">Cada persona con sus informes en el tiempo. Elige dos para comparar.</p></div>
+          <div><div className="eyebrow mb-2">Personas</div><h1 className="text-[clamp(30px,3.6vw,46px)] font-medium">Personas <span className="gradient-text">y seguimiento.</span></h1><p className="mt-2 max-w-[60ch] text-muted-foreground">Cada persona con sus informes en el tiempo. Elige dos para comparar.</p></div>
           <Button className="rounded-full" disabled={sel.length !== 2} onClick={() => router.push(`/compare?a=${sel[0]}&b=${sel[1]}`)}>Comparar {sel.length}/2</Button>
         </div>
         {l == null ? <div className="sk h-40 rounded-3xl" /> : !l.length ? <p className="text-muted-foreground">Aún no hay informes.</p> : Object.entries(groups).map(([k, rs]) => {

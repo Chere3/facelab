@@ -39,7 +39,7 @@ export function ProfileView({ R, stepState, stepDetail }: { R: Report; stepState
   else inner = <Empty className="mt-5">Sin foto de perfil. Súbela junto a la frontal para medir los ángulos reales de nariz, labios y mentón.</Empty>;
   return (
     <Section id="perfil">
-      <SectionHead eyebrow="Perfil" title={<>Tu perfil, <em className="italic text-coral">medido de verdad.</em></>} lede="Con una foto lateral los ángulos dejan de ser estimados: se leen sobre la silueta real de tu cara." />
+      <SectionHead eyebrow="Perfil" title={<>Tu perfil, <span className="gradient-text">medido de verdad.</span></>} lede="Con una foto lateral los ángulos dejan de ser estimados: se leen sobre la silueta real de tu cara." />
       {inner}
     </Section>
   );

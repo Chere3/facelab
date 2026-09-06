@@ -26,7 +26,7 @@ function Compare() {
     <>
       <Nav />
       <main className="mx-auto max-w-[1240px] px-5 md:px-7">
-        <div className="pt-10 pb-6"><div className="eyebrow mb-2"><Link href="/people">← Personas</Link></div><h1 className="text-[clamp(30px,3.6vw,46px)] font-medium">Comparación <em className="italic text-coral">en el tiempo.</em></h1>{A && B && <p className="mt-2 text-muted-foreground">{A.person} · {A.date} → {B.date}</p>}</div>
+        <div className="pt-10 pb-6"><div className="eyebrow mb-2"><Link href="/people">← Personas</Link></div><h1 className="text-[clamp(30px,3.6vw,46px)] font-medium">Comparación <span className="gradient-text">en el tiempo.</span></h1>{A && B && <p className="mt-2 text-muted-foreground">{A.person} · {A.date} → {B.date}</p>}</div>
         {!A || !B ? <div className="sk h-60 rounded-3xl" /> : (
           <div className="space-y-5">
             <div className="grid max-w-[560px] grid-cols-2 gap-4">{[A, B].map((R, i) => <div key={i}><img src={out(R.assets?.face)} alt="" className="w-full rounded-3xl" /><div className="mt-1 text-[12px] text-muted-foreground">{R.date}</div></div>)}</div>

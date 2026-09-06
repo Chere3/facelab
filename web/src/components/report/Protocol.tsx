@@ -17,7 +17,7 @@ export function Protocol({ R, stepState }: { R: Report; stepState: (id: string) 
   const tier = TIER[I.tier ?? ""];
   return (
     <Section id="rutina">
-      <SectionHead eyebrow="Tu rutina" title={<>Qué hacer, <em className="italic text-coral">y en qué orden.</em></>} lede="Solo métodos no quirúrgicos con nivel de evidencia. Lo que ya está en su sitio no se toca." />
+      <SectionHead eyebrow="Tu rutina" title={<>Qué hacer, <span className="gradient-text">y en qué orden.</span></>} lede="Solo métodos no quirúrgicos con nivel de evidencia. Lo que ya está en su sitio no se toca." />
       {P?.phases?.length ? (
         <div className="mt-6 space-y-5">
           <Card className="border-l-4" >
@@ -71,7 +71,7 @@ export function Letter({ title, children, className }: { title: string; children
   return (
     <div className={cn("rounded-3xl bg-gradient-to-br from-peach-2 to-lavender-2/70 px-6 py-6 md:px-8", className)}>
       <div className="eyebrow mb-2">{title}</div>
-      <div className="max-w-[70ch] font-display text-[18px] leading-relaxed md:text-[20px]" style={{ fontVariationSettings: '"opsz" 24, "SOFT" 80' }}>{children}</div>
+      <div className="max-w-[70ch] font-display text-[18px] leading-relaxed md:text-[20px]">{children}</div>
     </div>
   );
 }

@@ -43,7 +43,7 @@ export function Style({ R, stem, stepState, stepDetail, onWake }: { R: Report; s
             <Card>
               <div className="grid grid-cols-3 gap-2">
                 {(["skin", "hair", "eyes"] as const).map((k) => { const c = C[k]; const label = { skin: "Piel", hair: "Pelo", eyes: "Ojos" }[k]; return (
-                  <div key={k} className="text-center"><span className="mx-auto block size-14 rounded-2xl border border-black/10" style={{ background: c?.hex || "var(--secondary)" }} /><b className="mt-1.5 block text-[13px]">{label}</b><small className="block text-[11px] leading-tight text-muted-foreground">{c ? (k === "skin" ? `${c.depth}, subtono ${c.undertone}` : c.label) : "no visible"}</small><Sci><small className="block font-mono text-[10px] text-muted-foreground">{c?.hex} · L* {c?.L}</small></Sci></div>
+                  <div key={k} className="text-center"><span className="mx-auto block size-14 rounded-2xl border border-white/10" style={{ background: c?.hex || "var(--secondary)" }} /><b className="mt-1.5 block text-[13px]">{label}</b><small className="block text-[11px] leading-tight text-muted-foreground">{c ? (k === "skin" ? `${c.depth}, subtono ${c.undertone}` : c.label) : "no visible"}</small><Sci><small className="block font-mono text-[10px] text-muted-foreground">{c?.hex} · L* {c?.L}</small></Sci></div>
                 ); })}
               </div>
             </Card>
@@ -63,14 +63,14 @@ export function Style({ R, stem, stepState, stepDetail, onWake }: { R: Report; s
 
         {items.length > 0 && cur && (
           <div>
-            <h3 className="text-[22px] font-medium">La misma foto, <em className="italic text-coral">con distintas camisas.</em></h3>
+            <h3 className="text-[22px] font-medium">La misma foto, <span className="gradient-text">con distintas camisas.</span></h3>
             <Cap className="mt-0">{st.shirts?.mode === "recolor" ? "Se recolorea la prenda real de tu foto conservando pliegues y sombras." : "No se ve ropa en la foto: se simula con una tela bajo el mentón."} Toca un color.</Cap>
             <div className="mt-4 grid gap-5 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
               <Photo src={out(cur.file)} ratio="auto" fit="contain" className="max-w-[360px]" />
               <div className="space-y-3">
                 {([["best", "Mejores"], ["neutral", "Neutros"], ["avoid", "A evitar, para comparar"]] as const).map(([g, l]) => (
                   <div key={g}><div className="eyebrow mb-1.5">{l}</div><div className="flex flex-wrap gap-2">{items.filter((x) => x.group === g).map((x) => (
-                    <button key={x.file} onClick={() => setShirt(x.file)} className={cn("flex items-center gap-1.5 rounded-full border bg-paper py-1 pr-3 pl-1.5 text-[12px] font-semibold transition", cur.file === x.file ? "border-coral ring-2 ring-coral-2" : "border-line hover:border-line-2")}><i className="size-4 rounded-full border border-black/10" style={{ background: x.hex }} />{x.name}</button>
+                    <button key={x.file} onClick={() => setShirt(x.file)} className={cn("flex items-center gap-1.5 rounded-full border bg-paper py-1 pr-3 pl-1.5 text-[12px] font-semibold transition", cur.file === x.file ? "border-coral ring-2 ring-coral-2" : "border-line hover:border-line-2")}><i className="size-4 rounded-full border border-white/10" style={{ background: x.hex }} />{x.name}</button>
                   ))}</div></div>
                 ))}
               </div>
@@ -110,14 +110,14 @@ export function Style({ R, stem, stepState, stepDetail, onWake }: { R: Report; s
 
   return (
     <Section id="estilo">
-      <SectionHead eyebrow="Colorimetría y estilo" title={<>Qué colores, cortes y prendas <em className="italic text-coral">te favorecen.</em></>} lede={<><Simple>Tus colores medidos en la foto, tu estación, tu forma de cara y looks sobre tu propia imagen.</Simple><Sci>Piel, pelo y ojos medidos en CIELAB, estación de color con paleta, forma de cara y looks renderizados. Orientativo: la luz y el balance de blancos mueven el subtono.</Sci></>} />
+      <SectionHead eyebrow="Colorimetría y estilo" title={<>Qué colores, cortes y prendas <span className="gradient-text">te favorecen.</span></>} lede={<><Simple>Tus colores medidos en la foto, tu estación, tu forma de cara y looks sobre tu propia imagen.</Simple><Sci>Piel, pelo y ojos medidos en CIELAB, estación de color con paleta, forma de cara y looks renderizados. Orientativo: la luz y el balance de blancos mueven el subtono.</Sci></>} />
       {inner}
     </Section>
   );
 }
 
 function Swatches({ title, list }: { title: string; list: { hex: string; name: string }[] }) {
-  return <Card><div className="eyebrow">{title}</div><div className="mt-2 flex flex-wrap gap-2">{list.map((c) => <div key={c.hex} className="w-14 text-center text-[10px] leading-tight text-muted-foreground"><i className="mb-1 block h-9 rounded-xl border border-black/10" style={{ background: c.hex }} />{c.name}</div>)}</div></Card>;
+  return <Card><div className="eyebrow">{title}</div><div className="mt-2 flex flex-wrap gap-2">{list.map((c) => <div key={c.hex} className="w-14 text-center text-[10px] leading-tight text-muted-foreground"><i className="mb-1 block h-9 rounded-xl border border-white/10" style={{ background: c.hex }} />{c.name}</div>)}</div></Card>;
 }
 
 function LookGrid({ title, items, renders = {}, state, onRender }: { title: string; items?: Look[]; renders?: Record<string, Render>; state: string; onRender: (id: string) => void }) {
@@ -134,7 +134,7 @@ function LookGrid({ title, items, renders = {}, state, onRender }: { title: stri
               <h4 className="mt-0.5 text-[16px] font-semibold">{o.name || o.id}</h4>
               {o.description && <p className="mt-1 text-ink-2">{o.description}</p>}
               {!!o.pieces?.length && <ul className="mt-1.5 space-y-0.5 text-ink-2">{o.pieces.map((x, i) => <li key={i} className="flex gap-2"><span className="mt-2 size-1 shrink-0 rounded-full bg-ink-2" />{x}</li>)}</ul>}
-              {!!o.colors?.length && <div className="mt-2 flex gap-1.5">{o.colors.map((c) => <i key={c} className="size-5 rounded-md border border-black/10" style={{ background: c }} />)}</div>}
+              {!!o.colors?.length && <div className="mt-2 flex gap-1.5">{o.colors.map((c) => <i key={c} className="size-5 rounded-md border border-white/10" style={{ background: c }} />)}</div>}
               {o.accessories?.length ? <p className="mt-1.5"><b>Accesorios:</b> {o.accessories.join(", ")}</p> : null}
               {o.grooming && <p className="mt-1"><b>Grooming:</b> {o.grooming}</p>}
               <Sci>{o.maintenance && <p className="mt-1"><b>Mantenimiento:</b> {o.maintenance}</p>}{o.why && <Cap>{o.why}</Cap>}</Sci>

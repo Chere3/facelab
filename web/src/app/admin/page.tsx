@@ -15,7 +15,7 @@ export default function AdminPage() {
     <>
       <Nav />
       <main className="mx-auto max-w-[1100px] px-5 md:px-7">
-        <div className="pt-10 pb-6"><div className="eyebrow mb-2">Revisión</div><h1 className="text-[clamp(30px,3.6vw,46px)] font-medium">Cola <em className="italic text-coral">de revisión.</em></h1><p className="mt-2 text-muted-foreground">Cada informe se edita y aprueba antes de marcarlo como revisado.</p></div>
+        <div className="pt-10 pb-6"><div className="eyebrow mb-2">Revisión</div><h1 className="text-[clamp(30px,3.6vw,46px)] font-medium">Cola <span className="gradient-text">de revisión.</span></h1><p className="mt-2 text-muted-foreground">Cada informe se edita y aprueba antes de marcarlo como revisado.</p></div>
         {l == null ? <div className="sk h-40 rounded-3xl" /> : (
           <div className="card-soft overflow-hidden p-0">
             <table className="w-full text-[14px]"><thead><tr className="text-left text-[11px] tracking-wider text-muted-foreground uppercase"><th className="p-3"></th><th className="p-3 font-medium">Informe</th><th className="p-3 font-medium">Persona</th><th className="p-3 font-medium">Perfil</th><th className="p-3 font-medium">Estado</th><th></th></tr></thead>

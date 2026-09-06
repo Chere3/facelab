@@ -12,7 +12,7 @@ export function Ring({ value, max = 100, size = 96, stroke = 9, color = "var(--c
         <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={color} strokeWidth={stroke} strokeLinecap="round" strokeDasharray={c} strokeDashoffset={c * (1 - p)} className="ring-anim" style={{ ["--c" as string]: c }} />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center leading-none">
-        {children ?? (<><b className="tabular font-display font-semibold" style={{ fontSize: size * 0.28 }}>{value == null ? "–" : Math.round(value)}</b>{label && <span className="mt-1 text-[10px] font-medium text-muted-foreground">{label}</span>}</>)}
+        {children ?? (<><b className="tabular font-display" style={{ fontSize: size * 0.28 }}>{value == null ? "–" : Math.round(value)}</b>{label && <span className="mt-1 text-[10px] font-medium text-muted-foreground">{label}</span>}</>)}
       </div>
       {sub}
     </div>
