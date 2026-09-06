@@ -27,7 +27,7 @@ Variables de entorno:
 | Variable | Por defecto | Para qué |
 |---|---|---|
 | `FACELAB_PORT` | `8766` | Puerto de la API |
-| `FACELAB_WEB_URL` | `http://127.0.0.1:3000` | URL del front; la usan el PDF y las tarjetas PNG (Chrome headless) y las redirecciones |
+| `FACELAB_WEB_URL` | `http://localhost:3000` | URL del front; la usan el PDF y las tarjetas PNG (Chrome headless) y las redirecciones |
 | `FACELAB_API` (en `web/`) | `http://127.0.0.1:8766` | URL de la API a la que el front hace proxy |
 | `FACELAB_LOOK_PARALLEL` | `3` | Renders de Codex simultáneos |
 | `HF_TOKEN` | — | Descargas más rápidas de Hugging Face |

@@ -14,7 +14,7 @@ from .profile import Profile
 
 ROOT = Path(__file__).resolve().parent.parent
 IN_DIR, OUT_DIR = ROOT / "samples" / "mine", ROOT / "out" / "mine"
-WEB_URL = os.environ.get("FACELAB_WEB_URL", "http://127.0.0.1:3000").rstrip("/")  # front Next.js: lo usan el PDF y las tarjetas
+WEB_URL = os.environ.get("FACELAB_WEB_URL", "http://localhost:3000").rstrip("/")  # front Next.js: lo usan el PDF y las tarjetas
 app = FastAPI(title="facelab")
 
 

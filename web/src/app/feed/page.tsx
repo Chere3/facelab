@@ -42,14 +42,14 @@ export function FeedCard({ x, story }: { x: FeedItem; story?: boolean }) {
         <span className="flex items-center gap-2 rounded-full bg-black/55 py-1.5 pr-3 pl-1.5 text-[13px] font-semibold backdrop-blur"><span className="flex size-6 items-center justify-center rounded-full bg-coral text-[11px]">{(x.name || "?")[0].toUpperCase()}</span>{x.name || "Anónimo"}</span>
         {x.global != null && <span className="rounded-full bg-paper px-3 py-1.5 text-[14px] font-bold text-ink">{x.global}<small className="ml-1 font-medium text-muted-foreground">/100</small></span>}
       </div>
-      <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-5 pt-16">
+      <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-4 pt-10">
         <h3 className={cn("font-display leading-tight", story ? "text-[30px]" : "text-[22px]")}>{x.headline || "Análisis facial"}</h3>
-        <p className={cn("mt-1.5 mb-2.5 opacity-90", story ? "text-[15px]" : "text-[13px]")}>{x.strength ? simplify(x.strength) : ""}</p>
+        <p className={cn("mt-1 mb-2 opacity-90", story ? "text-[15px]" : "line-clamp-2 text-[12.5px]")}>{x.strength ? simplify(x.strength) : ""}</p>
         <div className="flex flex-wrap gap-1.5 text-[11px] font-semibold">
           {x.season && <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 backdrop-blur"><i className="size-2 rounded-full" style={{ background: x.season_hex || "#fff" }} />{x.season}</span>}
           {x.face_shape && <span className="rounded-full bg-white/15 px-2.5 py-1 backdrop-blur">Cara {x.face_shape.toLowerCase()}</span>}
-          {x.visual_age && <span className="rounded-full bg-white/15 px-2.5 py-1 backdrop-blur">Edad visual {x.visual_age}</span>}
-          {x.profile && <span className="rounded-full bg-white/15 px-2.5 py-1 backdrop-blur">{[SEX[x.profile.sex ?? ""], x.profile.age ? `${x.profile.age} años` : ""].filter(Boolean).join(" · ")}</span>}
+          {x.visual_age && story && <span className="rounded-full bg-white/15 px-2.5 py-1 backdrop-blur">Edad visual {x.visual_age}</span>}
+          {x.profile && story && <span className="rounded-full bg-white/15 px-2.5 py-1 backdrop-blur">{[SEX[x.profile.sex ?? ""], x.profile.age ? `${x.profile.age} años` : ""].filter(Boolean).join(" · ")}</span>}
         </div>
         <div className="mt-3 flex gap-3">{([["Simetría", x.symmetry], ["Proporción", x.proportionality], ["Armonía", x.averageness]] as const).filter((b) => b[1] != null).map(([k, v]) => <div key={k} className="flex-1"><small className="text-[10px] tracking-wider uppercase opacity-80">{k}</small><b className="block text-[16px]">{v}</b><i className="mt-1 block h-1 overflow-hidden rounded-full bg-white/25"><span className="block h-full bg-white" style={{ width: `${v}%` }} /></i></div>)}</div>
       </div>
