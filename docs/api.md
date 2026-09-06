@@ -1,18 +1,19 @@
 # API HTTP
 
-El servidor escucha en `http://127.0.0.1:8766` (`FACELAB_PORT` para cambiarlo). Sin autenticación: es una herramienta local. Si lo expones, ponle un proxy con acceso restringido (ver [deploy.md](deploy.md)).
+La API escucha en `http://127.0.0.1:8766` (`FACELAB_PORT` para cambiarlo) y el front Next.js en `http://localhost:3000`, que reenvía `/api/*`, `/out/*`, `/analyze` y `/reports` a la API. Sin autenticación: es una herramienta local. Si lo expones, ponle un proxy con acceso restringido (ver [deploy.md](deploy.md)).
 
-## Páginas
+## Páginas (front, `web/`)
 
 | Ruta | Qué es |
 |---|---|
-| `/` | Portada con onboarding de 5 pasos |
+| `/` | Portada con onboarding de 5 pasos (`#analizar` lo abre) |
 | `/feed` | Feed de personas analizadas (rejilla e historias) |
-| `/report/<stem>` | Informe progresivo. `?print=1` para el modo impresión, `?flat=1` desactiva el scroll suave (capturas) |
+| `/report/<stem>` | Informe progresivo en modo Simple o Ciencia. `?print=1` fuerza Ciencia y marca `data-ready` para el PDF |
 | `/story/<stem>` | Tarjetas 9:16 apiladas. `?card=n` muestra solo una a 1080×1920 |
-| `/people`, `/compare` | Línea temporal por persona y comparación de dos informes |
+| `/people`, `/compare?a=&b=` | Línea temporal por persona y comparación de dos informes |
 | `/admin`, `/admin/<stem>` | Cola de revisión humana y editor |
-| `/classic` | Subida clásica (formulario simple) |
+
+Si se pide una de estas rutas al puerto de la API, responde con una redirección al front (`FACELAB_WEB_URL`).
 
 ## Análisis
 

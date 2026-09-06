@@ -1,6 +1,6 @@
 # Arquitectura
 
-facelab es un servidor FastAPI local que convierte una foto en un informe JSON progresivo y lo pinta con páginas HTML sin framework. Todo el estado es un directorio de archivos por informe.
+facelab es un servidor FastAPI local que convierte una foto en un informe JSON progresivo, y una app Next.js (`web/`) que lo pinta. Todo el estado es un directorio de archivos por informe.
 
 ## Vista general
 
@@ -15,10 +15,10 @@ flowchart LR
   PR --> VZ[visualize<br/>Codex image_gen 3 m / 12 m]
   VZ --> L[looks<br/>13 renders Codex, 3 en paralelo]
   L --> R[(out/mine/stem.json<br/>+ status.json + imágenes)]
-  R --> W[report_page · feed · story · PDF]
+  R --> W[web/ Next.js<br/>informe · feed · story · PDF]
 ```
 
-Cada paso escribe en `out/mine/<stem>.json` y actualiza `out/mine/<stem>.status.json`. La página del informe hace polling cada 2,5 s y rellena solo lo que cambió (huella por sección), así que el usuario ve el preinforme en segundos y el resto va apareciendo.
+Cada paso escribe en `out/mine/<stem>.json` y actualiza `out/mine/<stem>.status.json`. La página del informe (`web/src/app/report/[stem]`) hace polling cada 2,5 s y rellena solo lo que cambió (huella por sección), así que el usuario ve el preinforme en segundos y el resto va apareciendo.
 
 ## Módulos
 
@@ -43,7 +43,7 @@ Cada paso escribe en `out/mine/<stem>.json` y actualiza `out/mine/<stem>.status.
 | `visualize.py` | Prompt desde estadísticas y protocolo; proyección 3 y 12 meses | Codex `image_gen` |
 | `pipeline.py` | Orquestación por pasos con estado y regeneración parcial | — |
 | `serve.py` | API, subida, feed, regeneración, PDF y tarjetas | FastAPI, Chrome headless |
-| `ui.py`, `landing_page.py`, `feed_page.py`, `report_page.py`, `admin_page.py` | Sistema de diseño y páginas | — |
+| `web/` | Front: portada y onboarding, informe (modo Simple / Ciencia), feed, tarjetas 9:16, personas, comparación y revisión | Next.js 16, React 19, Tailwind 4, shadcn/ui, Recharts |
 
 ## Decisiones de diseño
 
@@ -55,12 +55,16 @@ Cada paso escribe en `out/mine/<stem>.json` y actualiza `out/mine/<stem>.status.
 
 **Codex para imágenes.** Las proyecciones y los looks llaman a `codex exec -m gpt-5.5 -i cara.jpg` con la herramienta `image_gen`. Cada prompt lleva una lista explícita de lo que no debe cambiar (identidad, huesos, ojos, nariz, edad). Los PNG se convierten a JPEG de 720 px para el informe y el PDF.
 
-**Páginas sin build.** Todo el front es HTML y JS plano dentro de cadenas Python con un sistema de tokens compartido (`ui.py`). No hay bundler ni Node en tiempo de ejecución; Node solo se usa en desarrollo para `node --check`.
+**Front en Next.js, API en Python.** `web/` es una app Next.js (App Router, TypeScript, Tailwind 4, shadcn/ui, Recharts, Bun) que se comunica con FastAPI por rutas relativas: `next.config.ts` reenvía `/api/*`, `/out/*`, `/analyze` y `/reports` al puerto 8766 (`FACELAB_API`). Los tokens de diseño viven en `web/src/app/globals.css`; los tipos del JSON en `web/src/lib/types.ts`; el lenguaje llano del modo Simple (nombres de medidas, rangos de percentil, traducción de jerga) en `web/src/lib/plain.ts`.
+
+**Dos modos de lectura.** El informe se renderiza una sola vez con todo el contenido; `data-mode` en `<html>` (guardado en `localStorage`) decide qué bloques se ven: `<Simple>` (anillos, radar, chips en lenguaje llano, puntos fuertes y a vigilar) o `<Sci>` (tablas de medidas con percentil y norma, hallazgos de la narrativa, detalles del modelo). El PDF se imprime en modo Ciencia.
+
+**Capturas contra el front.** El PDF (`/api/pdf`) y las tarjetas PNG (`/api/card`) abren Chrome headless contra `FACELAB_WEB_URL` (por defecto `http://127.0.0.1:3000`): `/report/<stem>?print=1` y `/story/<stem>?card=n`. Si alguien entra por el puerto de la API a una ruta de página, FastAPI le redirige al front.
 
 ## Ciclo de vida de un informe
 
 1. `POST /analyze` guarda la foto en `samples/mine/<stem>.jpg`, escribe `meta.json` y lanza `pipeline.run_full` en un hilo.
-2. El navegador redirige a `/report/<stem>`, que consulta `/api/status/<stem>` y `/api/report/<stem>` cada 2,5 s.
+2. El navegador va a `/report/<stem>` (Next.js), que consulta `/api/status/<stem>` y `/api/report/<stem>` cada 2,5 s a través del proxy.
 3. Cada paso guarda el JSON con escritura atómica (`.json.tmp` → `rename`) para que la lectura nunca vea un archivo a medias.
 4. `POST /api/regen/<stem>` con `{"steps": [...]}` relanza pasos concretos; con `look_ids` renderiza una sola tarjeta.
 5. `PUT /api/review/<stem>` guarda ediciones humanas y marca el informe como revisado.

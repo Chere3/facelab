@@ -3,6 +3,7 @@
 ## Requisitos
 
 - macOS o Linux con Python 3.11 y [uv](https://docs.astral.sh/uv/). En Apple Silicon todo corre en CPU sin configuración.
+- [Bun](https://bun.sh) para el front (Next.js).
 - ~3 GB de disco: dependencias (torch, transformers, mediapipe, opencv) y modelos descargados en el primer uso.
 - Para narrativa, protocolo y asesoría: [Claude Code](https://claude.com/claude-code) instalado y con sesión iniciada. facelab usa el Agent SDK con esa sesión; no necesita API key.
 - Para proyecciones y looks: [Codex CLI](https://github.com/openai/codex) (`codex`) con acceso a `gpt-5.5` e `image_gen`.
@@ -15,15 +16,19 @@ Sin Claude ni Codex el resto funciona: medidas, percentiles, piel, colorimetría
 ```bash
 git clone https://github.com/Chere3/facelab && cd facelab
 uv sync
-uv run python -m facelab.serve
-# → http://localhost:8766
+./dev.sh                     # API en :8766 + front en :3000 (instala web/ la primera vez)
+# → http://localhost:3000
 ```
+
+Para producción local: `cd web && bun run build && bun run start` sirve el front compilado en :3000; la API sigue con `uv run python -m facelab.serve`.
 
 Variables de entorno:
 
 | Variable | Por defecto | Para qué |
 |---|---|---|
-| `FACELAB_PORT` | `8766` | Puerto del servidor |
+| `FACELAB_PORT` | `8766` | Puerto de la API |
+| `FACELAB_WEB_URL` | `http://127.0.0.1:3000` | URL del front; la usan el PDF y las tarjetas PNG (Chrome headless) y las redirecciones |
+| `FACELAB_API` (en `web/`) | `http://127.0.0.1:8766` | URL de la API a la que el front hace proxy |
 | `FACELAB_LOOK_PARALLEL` | `3` | Renders de Codex simultáneos |
 | `HF_TOKEN` | — | Descargas más rápidas de Hugging Face |
 
@@ -42,9 +47,9 @@ models/         modelos descargados (.task)
 
 facelab no tiene autenticación. Tres opciones, de más a menos segura:
 
-1. **Tailscale Serve** (solo tu tailnet): `tailscale serve --bg 8766`. Solo tus dispositivos y los de quien invites.
-2. **Tailscale Funnel** (público con HTTPS): `tailscale funnel --bg 8766`. Cualquiera con el enlace puede subir fotos, lanzar análisis que consumen tu cuenta de Claude y Codex, y entrar en `/admin`. Apágalo con `tailscale funnel --https=443 off`.
-3. **Proxy con autenticación** (Caddy, nginx, Cloudflare Access) delante del puerto 8766, restringiendo al menos `/analyze`, `/api/regen` y `/admin`.
+1. **Tailscale Serve** (solo tu tailnet): `tailscale serve --bg 3000` (el front hace proxy a la API). Solo tus dispositivos y los de quien invites.
+2. **Tailscale Funnel** (público con HTTPS): `tailscale funnel --bg 3000`. Cualquiera con el enlace puede subir fotos, lanzar análisis que consumen tu cuenta de Claude y Codex, y entrar en `/admin`. Apágalo con `tailscale funnel --https=443 off`.
+3. **Proxy con autenticación** (Caddy, nginx, Cloudflare Access) delante del puerto 3000, restringiendo al menos `/analyze`, `/api/regen` y `/admin`.
 
 ## Actualizar normas
 

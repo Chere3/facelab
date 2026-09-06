@@ -18,3 +18,11 @@ models/*.onnx
 # logs
 *.log
 norms/*.log
+
+# front (web/)
+web/node_modules/
+web/.next/
+web/out/
+web/.env*.local
+web/next-env.d.ts
+web/*.tsbuildinfo

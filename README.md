@@ -55,17 +55,19 @@ Todo corre en tu Mac. Las fotos no salen de tu ordenador. El único texto que vi
 | 🔮 | **Proyección** | Cómo te verías a 3 y 12 meses siguiendo el protocolo, con una lista explícita de lo que no cambia (huesos, ojos, nariz, edad). |
 | 📏 | **Perfil real** | Con una foto lateral: nasofrontal, nasolabial, mentolabial, convexidad y línea E medidos sobre la silueta real. |
 | 🧑‍⚕️ | **Revisión humana** | Cola de revisión donde una persona corrige narrativa y protocolo, firma y aprueba. |
-| 📱 | **Producto** | Onboarding de cinco pasos, feed con historias, informe en modo simple o con ciencia, tarjetas 9:16 y PDF con portada. |
+| 📱 | **Producto** | Onboarding de cinco pasos, feed con historias, informe en modo **Simple** (lenguaje llano y gráficas) o **Ciencia**, tarjetas 9:16 y PDF con portada. Front en Next.js + shadcn/ui. |
 
 ## 🚀 Inicio rápido
 
 ```bash
 git clone https://github.com/Chere3/facelab && cd facelab
-uv sync
-uv run python -m facelab.serve
+uv sync                      # API y pipeline (Python)
+./dev.sh                     # arranca la API (:8766) y el front Next.js (:3000)
 ```
 
-Abre **http://localhost:8766**, pulsa *Analizar mi cara*, sube una foto de frente y en cinco minutos tienes el informe completo. El preinforme con medidas y percentiles aparece en segundos; el resto se rellena solo.
+Abre **http://localhost:3000**, pulsa *Analizar mi cara*, sube una foto de frente y en cinco minutos tienes el informe completo. El preinforme con medidas y percentiles aparece en segundos; el resto se rellena solo. El informe tiene dos modos: **Simple** (para cualquiera, casi sin texto, con gráficas) y **Ciencia** (cada valor, percentil y norma).
+
+Por separado: `uv run python -m facelab.serve` (API) y `cd web && bun install && bun run dev` (front).
 
 <details>
 <summary><b>Requisitos y qué hace falta para cada parte</b></summary>
@@ -73,6 +75,7 @@ Abre **http://localhost:8766**, pulsa *Analizar mi cara*, sube una foto de frent
 | Parte | Necesita | Sin ello |
 |---|---|---|
 | Medidas, percentiles, piel, colorimetría, camisas, perfil, PDF | Python 3.11 + `uv` | — |
+| Interfaz (portada, informe, feed, revisión) | [Bun](https://bun.sh) (Next.js 16, React 19, shadcn/ui, Recharts) | solo API |
 | Narrativa, protocolo, asesoría de estilo | [Claude Code](https://claude.com/claude-code) con sesión iniciada (Agent SDK, sin API key) | esas secciones quedan pendientes |
 | Proyección y looks | [Codex CLI](https://github.com/openai/codex) con `gpt-5.5` e `image_gen` | esas secciones quedan pendientes |
 | PDF y tarjetas PNG | Google Chrome o Chromium | Imprimir → Guardar como PDF |
@@ -188,7 +191,7 @@ Seis agentes en paralelo redactan las secciones en registro clínico: cada afirm
 
 ### 7. Producto
 
-Un JSON por informe, sin base de datos. La página del informe hace polling y rellena solo lo que cambia. Modo **Simple** (explicaciones) o **Con ciencia** (cada valor, percentil y norma). Sección *Para compartir* con seis tarjetas 9:16 y descarga PNG. PDF A4 con portada. Feed con rejilla e historias. Cola de revisión humana. Arquitectura completa en [docs/architecture.md](docs/architecture.md).
+Un JSON por informe, sin base de datos. El front es una app Next.js (`web/`) con shadcn/ui y Recharts que hace polling y rellena solo lo que cambia. Modo **Simple** (una idea por pantalla, anillos, radar, barras de percentil, frases en lenguaje llano) o **Ciencia** (cada valor, percentil, norma y fuente). Sección *Para compartir* con seis tarjetas 9:16 y descarga PNG. PDF A4 con portada. Feed con rejilla e historias. Cola de revisión humana. Arquitectura completa en [docs/architecture.md](docs/architecture.md).
 
 ## 📚 Ciencia y fuentes
 
@@ -245,8 +248,8 @@ facelab/
 ├── colorimetry.py · style.py · style.yaml                                 # colorimetría y estilo
 ├── profile_view.py                                                        # perfil lateral
 ├── narrate.py · protocol.py · methods.yaml · visualize.py                 # Claude y Codex
-├── pipeline.py · serve.py                                                 # orquestación y API
-└── ui.py · landing_page.py · feed_page.py · report_page.py · admin_page.py # producto
+└── pipeline.py · serve.py                                                 # orquestación y API
+web/        front Next.js: src/app (páginas), src/components (report, charts, landing, story, ui), src/lib (tipos, API, lenguaje llano)
 norms/      features de MEBeauty y modelo de atractivo (se versionan)
 docs/       arquitectura, API, medidas, métodos, colorimetría, despliegue
 tests/      tests ligeros sin modelos
@@ -276,6 +279,7 @@ Medidas nuevas con fuente, métodos con evidencia, mejoras de producto. Lee [CON
 ```bash
 uv run pytest -q             # tests
 uv run ruff check facelab    # lint
+cd web && bun run lint && bun run build   # front
 ```
 
 ## ⚖️ Licencia y aviso

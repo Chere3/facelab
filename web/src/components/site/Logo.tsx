@@ -1,0 +1,11 @@
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+export function Logo({ className, size = 22 }: { className?: string; size?: number }) {
+  return (
+    <Link href="/" className={cn("inline-flex items-center gap-2 font-display font-semibold tracking-tight text-ink no-underline", className)} style={{ fontSize: size * 0.85 }}>
+      <span aria-hidden className="inline-block rounded-[30%]" style={{ width: size, height: size, background: "conic-gradient(from 200deg, var(--coral), var(--peach), var(--butter), var(--lavender), var(--coral))" }} />
+      facelab
+    </Link>
+  );
+}

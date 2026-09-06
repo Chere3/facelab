@@ -14,3 +14,12 @@ jobs:
         run: uvx ruff check facelab tests
       - name: Tests (sin modelos pesados)
         run: uv run --with pytest --with pyyaml --with numpy --with opencv-python-headless --no-project pytest -q tests
+  web:
+    runs-on: ubuntu-latest
+    defaults: {run: {working-directory: web}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+      - run: bun run build
