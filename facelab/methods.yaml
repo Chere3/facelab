@@ -1,0 +1,512 @@
+# Base de métodos no quirúrgicos (semilla). Cada entrada: qué aborda, evidencia, coste, frecuencia, horizonte, dificultad.
+# evidence: A = ensayos controlados / metaanálisis; B = estudios observacionales o pequeños ECA; C = consenso clínico / plausible.
+# Nada de esto es consejo médico; los principios activos se consultan con dermatólogo si hay dudas o piel sensible.
+- id: retinoid_night
+  name: Retinoide tópico nocturno (retinol 0,3–0,5 % o adapaleno 0,1 %)
+  addresses: [skin_texture, fine_lines, pores, acne, uneven_tone]
+  evidence: A
+  sources: ["Kang et al. 1995 (tretinoína, fotoenvejecimiento)", "Mukherjee et al. 2006 (revisión retinoides)"]
+  cost_usd: "15–40 / mes"
+  frequency: "noches alternas 2 semanas, luego cada noche"
+  horizon: "8–12 semanas"
+  difficulty: medium
+  caution: "irritación inicial; no combinar con ácidos las primeras semanas; fotoprotección obligatoria"
+- id: sunscreen_daily
+  name: Fotoprotector SPF 30–50 diario
+  addresses: [uneven_tone, hyperpigmentation, fine_lines, skin_aging, redness]
+  evidence: A
+  sources: ["Hughes et al. 2013 (Ann Intern Med, uso diario y envejecimiento)"]
+  cost_usd: "10–25 / mes"
+  frequency: "cada mañana"
+  horizon: "inmediato (prevención), 3–6 meses (tono)"
+  difficulty: easy
+- id: vitamin_c_am
+  name: Sérum de vitamina C (10–15 % ácido L-ascórbico) por la mañana
+  addresses: [uneven_tone, hyperpigmentation, dullness]
+  evidence: B
+  sources: ["Pullar et al. 2017 (revisión)", "Al-Niaimi & Chiang 2017"]
+  cost_usd: "15–40 / mes"
+  frequency: "cada mañana antes del SPF"
+  horizon: "8–12 semanas"
+  difficulty: easy
+- id: niacinamide
+  name: Niacinamida 4–5 %
+  addresses: [pores, redness, uneven_tone, oiliness]
+  evidence: B
+  sources: ["Bissett et al. 2005", "Draelos et al. 2006 (sebo)"]
+  cost_usd: "8–20 / mes"
+  frequency: "1–2 veces al día"
+  horizon: "4–8 semanas"
+  difficulty: easy
+- id: azelaic_acid
+  name: Ácido azelaico 10–15 %
+  addresses: [redness, acne, hyperpigmentation]
+  evidence: A
+  sources: ["Fitton & Goa 1991", "Thiboutot et al. 2003 (rosácea)"]
+  cost_usd: "12–30 / mes"
+  frequency: "1–2 veces al día"
+  horizon: "8–12 semanas"
+  difficulty: easy
+- id: aha_bha_exfoliation
+  name: Exfoliación química suave (ácido glicólico 5–8 % o salicílico 2 %)
+  addresses: [skin_texture, pores, acne, dullness]
+  evidence: B
+  sources: ["Tang & Yang 2018 (revisión AHA)"]
+  cost_usd: "10–25 / mes"
+  frequency: "2–3 veces por semana"
+  horizon: "4–8 semanas"
+  difficulty: easy
+  caution: "no combinar la misma noche con retinoide al principio"
+- id: hydration_barrier
+  name: Hidratante con ceramidas y protección de barrera
+  addresses: [dryness, redness, skin_texture, lip_dryness]
+  evidence: B
+  sources: ["Spada et al. 2018"]
+  cost_usd: "8–25 / mes"
+  frequency: "2 veces al día"
+  horizon: "1–2 semanas"
+  difficulty: easy
+- id: brow_shaping
+  name: Perfilado de cejas según la forma natural (arco, cola, densidad)
+  addresses: [brow_shape, brow_tilt, brow_symmetry, eye_framing]
+  evidence: C
+  sources: ["Consenso estético; la ceja enmarca el ojo (Gunter & Antrobus 1997 sobre posición ideal de la ceja)"]
+  cost_usd: "15–35 por sesión"
+  frequency: "cada 3–5 semanas"
+  horizon: "inmediato"
+  difficulty: easy
+- id: brow_growth_serum
+  name: Densificación de cejas (minoxidil 2–5 % tópico bajo indicación, o sérum con péptidos)
+  addresses: [brow_density, brow_thickness]
+  evidence: B
+  sources: ["Lee et al. 2014 (minoxidil en cejas)"]
+  cost_usd: "10–30 / mes"
+  frequency: "diario"
+  horizon: "3–4 meses"
+  difficulty: medium
+  caution: "minoxidil: consultar; evitar contacto ocular"
+- id: lash_serum
+  name: Sérum de pestañas (bimatoprost bajo indicación o péptidos)
+  addresses: [lash_fullness, eye_framing]
+  evidence: A
+  sources: ["Smith et al. 2012 (bimatoprost 0,03 %)"]
+  cost_usd: "20–60 / mes"
+  frequency: "cada noche"
+  horizon: "8–16 semanas"
+  difficulty: easy
+  caution: "bimatoprost requiere prescripción; puede oscurecer la piel periocular"
+- id: under_eye_routine
+  name: "Rutina de ojeras: sueño, sal, cafeína tópica, retinoide suave, corrector de tono"
+  addresses: [under_eye_pigmentation, under_eye_puffiness, under_eye_hollowness]
+  evidence: B
+  sources: ["Vrcek et al. 2016 (revisión ojeras)"]
+  cost_usd: "10–40 / mes"
+  frequency: "diario"
+  horizon: "6–10 semanas"
+  difficulty: easy
+- id: haircut_face_shape
+  name: Corte y volumen del pelo adaptados a la forma de cara y tercios
+  addresses: [face_shape_balance, forehead_height, facial_thirds, face_width, jaw_balance]
+  evidence: C
+  sources: ["Principio de compensación visual: volumen arriba alarga, laterales acortan"]
+  cost_usd: "20–60 por corte"
+  frequency: "cada 4–6 semanas"
+  horizon: "inmediato"
+  difficulty: easy
+- id: beard_shaping
+  name: Barba perfilada para redefinir mandíbula y mentón (si aplica)
+  addresses: [jaw_definition, chin_projection, jaw_to_cheek, lower_third]
+  evidence: B
+  sources: ["Dixson & Brooks 2013 (percepción de barba)"]
+  cost_usd: "0–30 / mes"
+  frequency: "mantenimiento semanal"
+  horizon: "4–8 semanas"
+  difficulty: easy
+- id: body_fat_reduction
+  name: Reducción moderada de grasa corporal (déficit calórico y fuerza)
+  addresses: [jaw_definition, cheek_definition, submental_fat, facial_adiposity]
+  evidence: A
+  sources: ["Coetzee et al. 2009 (adiposidad facial y percepción de salud)"]
+  cost_usd: "0"
+  frequency: "diario"
+  horizon: "3–6 meses"
+  difficulty: hard
+- id: sleep_hygiene
+  name: Sueño 7–9 h regular
+  addresses: [under_eye_puffiness, skin_dullness, perceived_health, visual_age]
+  evidence: A
+  sources: ["Axelsson et al. 2010 (BMJ, apariencia tras privación de sueño)"]
+  cost_usd: "0"
+  frequency: "diario"
+  horizon: "1–2 semanas"
+  difficulty: medium
+- id: sodium_alcohol
+  name: Reducir sodio y alcohol para bajar retención facial
+  addresses: [facial_puffiness, under_eye_puffiness, jaw_definition]
+  evidence: B
+  sources: ["Consenso clínico; edema por sodio"]
+  cost_usd: "0"
+  frequency: "diario"
+  horizon: "1–3 semanas"
+  difficulty: medium
+- id: posture_head
+  name: Postura de cabeza y cuello (evitar cabeza adelantada)
+  addresses: [jaw_definition, neck_definition, submental_angle, profile_convexity]
+  evidence: C
+  sources: ["Efecto geométrico en fotos y ángulo submental-cervical"]
+  cost_usd: "0"
+  frequency: "diario"
+  horizon: "2–4 semanas"
+  difficulty: medium
+- id: teeth_whitening
+  name: Blanqueamiento dental (peróxido de carbamida 10–16 % en férula)
+  addresses: [tooth_color, smile_quality]
+  evidence: A
+  sources: ["Haywood & Heymann 1989; revisiones Cochrane"]
+  cost_usd: "30–300"
+  frequency: "2 semanas, mantenimiento anual"
+  horizon: "2 semanas"
+  difficulty: easy
+  caution: "sensibilidad; supervisión dental"
+- id: clear_aligners
+  name: Alineadores transparentes (ortodoncia)
+  addresses: [tooth_alignment, smile_symmetry, lip_support]
+  evidence: A
+  sources: ["Revisión sistemática Rossini et al. 2015"]
+  cost_usd: "1500–5000"
+  frequency: "22 h/día"
+  horizon: "6–18 meses"
+  difficulty: hard
+  caution: "requiere ortodoncista"
+- id: lip_care
+  name: "Cuidado labial: exfoliación suave, bálsamo con SPF, hidratación"
+  addresses: [lip_smoothness, lip_hydration, lip_lines]
+  evidence: C
+  sources: ["Consenso dermatológico"]
+  cost_usd: "5–15 / mes"
+  frequency: "diario"
+  horizon: "1–2 semanas"
+  difficulty: easy
+- id: glasses_frames
+  name: Montura de gafas elegida por forma de cara y anchura de ojos
+  addresses: [eye_spacing_ratio, face_width, brow_position, facial_fifths]
+  evidence: C
+  sources: ["Principio óptico: la montura redefine quintos y línea de cejas"]
+  cost_usd: "50–300"
+  frequency: "una vez"
+  horizon: "inmediato"
+  difficulty: easy
+- id: skin_hydration_water
+  name: Hidratación sistémica e ingesta de agua adecuada
+  addresses: [skin_texture, dullness]
+  evidence: B
+  sources: ["Palma et al. 2015"]
+  cost_usd: "0"
+  frequency: "diario"
+  horizon: "2–4 semanas"
+  difficulty: easy
+- id: facial_massage_lymph
+  name: Drenaje facial manual o gua sha (efecto temporal)
+  addresses: [facial_puffiness, under_eye_puffiness]
+  evidence: C
+  sources: ["Evidencia débil; efecto de horas"]
+  cost_usd: "0–40"
+  frequency: "5 min por la mañana"
+  horizon: "inmediato, temporal"
+  difficulty: easy
+- id: dermatologist_referral
+  name: Consulta dermatológica para acné activo, rosácea, melasma o cicatrices
+  addresses: [acne, acne_scarring, redness, hyperpigmentation]
+  evidence: A
+  sources: ["Guías AAD"]
+  cost_usd: "50–200"
+  frequency: "según indicación"
+  horizon: "variable"
+  difficulty: medium
+- id: photo_technique
+  name: "Técnica fotográfica: luz frontal difusa, cámara a la altura de los ojos, distancia focal ≥50 mm"
+  addresses: [perceived_nose_width, perceived_face_width, perceived_symmetry]
+  evidence: B
+  sources: ["Perona 2007 (distorsión por distancia focal)", "Ward et al. 2018 (selfies y nariz)"]
+  cost_usd: "0"
+  frequency: "siempre"
+  horizon: "inmediato"
+  difficulty: easy
+- id: tranexamic_topical
+  name: Ácido tranexámico tópico 2–5 % para manchas
+  addresses: [hyperpigmentation, uneven_tone, melasma]
+  evidence: B
+  sources: ["Kim et al. 2016 (melasma, tópico)", "Zhu et al. 2019"]
+  cost_usd: "15–35 / mes"
+  frequency: "1–2 veces al día"
+  horizon: "8–12 semanas"
+  difficulty: easy
+- id: benzoyl_peroxide
+  name: Peróxido de benzoilo 2,5–5 % para acné inflamatorio
+  addresses: [acne, redness]
+  evidence: A
+  sources: ["Guías AAD 2016 (Zaenglein et al.)"]
+  cost_usd: "8–15 / mes"
+  frequency: "1 vez al día"
+  horizon: "4–8 semanas"
+  difficulty: easy
+  caution: "decolora tejidos; puede irritar"
+- id: chemical_peel_pro
+  name: Peeling químico profesional superficial (glicólico 30–50 % o salicílico 20–30 %)
+  addresses: [skin_texture, acne_scarring, hyperpigmentation, dullness]
+  evidence: A
+  sources: ["Revisión Cochrane 2018 (peelings para acné)", "Sharad 2013"]
+  cost_usd: "80–200 por sesión"
+  frequency: "cada 3–4 semanas, 4–6 sesiones"
+  horizon: "3–4 meses"
+  difficulty: medium
+  caution: "profesional cualificado; fotoprotección estricta"
+- id: microneedling
+  name: Microneedling profesional para cicatrices de acné y textura
+  addresses: [acne_scarring, skin_texture, pores]
+  evidence: A
+  sources: ["Metaanálisis Juhasz & Cohen 2020", "Alster & Graham 2018"]
+  cost_usd: "150–400 por sesión"
+  frequency: "cada 4–6 semanas, 3–4 sesiones"
+  horizon: "3–6 meses"
+  difficulty: medium
+  caution: "requiere profesional; no en acné activo"
+- id: laser_vascular
+  name: Láser vascular o IPL para rojez y capilares (dermatología)
+  addresses: [redness, vascular_visibility]
+  evidence: A
+  sources: ["Van Zuuren et al. 2019 (Cochrane, rosácea)"]
+  cost_usd: "150–400 por sesión"
+  frequency: "2–4 sesiones"
+  horizon: "2–4 meses"
+  difficulty: medium
+  caution: "derivación dermatológica"
+- id: brow_lamination
+  name: Laminado de cejas para orden y sensación de densidad
+  addresses: [brow_density, brow_shape, brow_thickness]
+  evidence: C
+  sources: ["Técnica cosmética; efecto temporal"]
+  cost_usd: "40–90 por sesión"
+  frequency: "cada 6–8 semanas"
+  horizon: "inmediato"
+  difficulty: easy
+- id: scalp_hair_care
+  name: Cuidado capilar y volumen (minoxidil bajo indicación si hay pérdida)
+  addresses: [hair_density, forehead_height, facial_thirds, face_framing]
+  evidence: A
+  sources: ["Olsen et al. 2002 (minoxidil 5 %)", "Gupta & Charrette 2015"]
+  cost_usd: "15–40 / mes"
+  frequency: "diario"
+  horizon: "4–6 meses"
+  difficulty: medium
+  caution: "minoxidil: consultar; uso continuado"
+- id: hydrafacial_cleansing
+  name: Limpieza facial profesional periódica
+  addresses: [pores, oiliness, dullness, skin_texture]
+  evidence: C
+  sources: ["Consenso estético; efecto a corto plazo"]
+  cost_usd: "60–150 por sesión"
+  frequency: "cada 4–8 semanas"
+  horizon: "inmediato"
+  difficulty: easy
+- id: oral_hygiene_gum
+  name: Higiene bucal y revisión periodontal (encías, halitosis, esmalte)
+  addresses: [smile_quality, gum_visibility, tooth_color]
+  evidence: A
+  sources: ["Guías periodontales EFP 2020"]
+  cost_usd: "50–120 / año"
+  frequency: "2 veces al día; revisión semestral"
+  horizon: "4–8 semanas"
+  difficulty: easy
+- id: mewing_no
+  name: Postura lingual (\"mewing\") como cambio óseo
+  addresses: [jaw_definition]
+  evidence: C
+  sources: ["Sin evidencia de cambio esquelético en adultos; solo postura y tono"]
+  cost_usd: "0"
+  frequency: "-"
+  horizon: "-"
+  difficulty: easy
+  caution: "NO recomendar como método de cambio estructural; solo puede citarse para descartarlo"
+- id: strength_training
+  name: Entrenamiento de fuerza 2–3 veces por semana
+  addresses: [perceived_health, posture, neck_definition, body_composition]
+  evidence: A
+  sources: ["Westcott 2012 (revisión)", "Coetzee et al. 2009 (adiposidad facial)"]
+  cost_usd: "0–40 / mes"
+  frequency: "2–3 sesiones / semana"
+  horizon: "3–6 meses"
+  difficulty: medium
+- id: smoking_alcohol_reduction
+  name: Dejar de fumar y reducir alcohol
+  addresses: [skin_aging, visual_age, redness, tooth_color, under_eye_puffiness]
+  evidence: A
+  sources: ["Okada et al. 2013 (gemelos y tabaco)", "Goodman et al. 2019 (alcohol y envejecimiento facial)"]
+  cost_usd: "0"
+  frequency: "-"
+  horizon: "3–12 meses"
+  difficulty: hard
+- id: hat_uv_avoidance
+  name: Sombra, gorra o sombrero y evitar el sol de mediodía
+  addresses: [hyperpigmentation, skin_aging, redness]
+  evidence: A
+  sources: ["Guías AAD fotoprotección"]
+  cost_usd: "0–30"
+  frequency: "diario al aire libre"
+  horizon: "prevención"
+  difficulty: easy
+- id: makeup_grooming_basics
+  name: Corrección de tono y definición con maquillaje o grooming sutil (corrector, gel de cejas)
+  addresses: [under_eye_pigmentation, uneven_tone, brow_density, lip_color_contrast]
+  evidence: C
+  sources: ["Técnica cosmética; efecto inmediato y reversible"]
+  cost_usd: "10–40"
+  frequency: "diario, opcional"
+  horizon: "inmediato"
+  difficulty: easy
+# ---- nivel intensivo / glow-up
+- id: hair_transformation
+  name: Transformación de pelo completa (corte con forma concreta, textura y producto)
+  addresses: [face_shape_balance, facial_thirds, forehead_height, face_width, jaw_balance, first_impression]
+  evidence: B
+  sources: ["Percepción de forma facial y encuadre capilar (consenso de estilistas; Springer & Bakker sobre marco facial)"]
+  cost_usd: "40–120 por corte + 20–40 producto"
+  frequency: "cada 3–4 semanas"
+  horizon: "inmediato; 3–6 meses si hay que dejar crecer"
+  difficulty: medium
+  tier: intensive
+- id: hair_color
+  name: Cambio de color o tono de pelo para contrastar con la piel y los ojos
+  addresses: [contrast, skin_tone_harmony, first_impression]
+  evidence: C
+  sources: ["Contraste facial y percepción (Russell 2009 sobre contraste)"]
+  cost_usd: "60–200"
+  frequency: "cada 6–10 semanas"
+  horizon: "inmediato"
+  difficulty: easy
+  tier: intensive
+- id: beard_growth_program
+  name: "Programa de barba: dejar crecer 8–12 semanas, minoxidil 5 % en zonas ralas bajo indicación, perfilado profesional"
+  addresses: [jaw_definition, chin_projection, jaw_to_cheek, lower_third, facial_masculinity]
+  evidence: B
+  sources: ["Dixson & Brooks 2013", "Ingprasert et al. 2016 (minoxidil en barba)"]
+  cost_usd: "20–40 / mes"
+  frequency: "diario; perfilado cada 2–3 semanas"
+  horizon: "3 meses"
+  difficulty: medium
+  tier: intensive
+  caution: "solo hombres; minoxidil bajo indicación"
+- id: body_recomposition
+  name: Recomposición corporal con objetivo numérico (déficit 400–500 kcal, 1,6–2 g proteína/kg, fuerza 3×/semana, 8–10 k pasos)
+  addresses: [jaw_definition, cheek_definition, submental_fat, facial_adiposity, perceived_health, visual_age]
+  evidence: A
+  sources: ["Coetzee et al. 2009 (adiposidad facial)", "Re et al. 2011 (peso y salud percibida)"]
+  cost_usd: "0–50 / mes"
+  frequency: "diario"
+  horizon: "3–9 meses (0,5 kg/semana)"
+  difficulty: hard
+  tier: intensive
+- id: skin_pro_program
+  name: Programa dermatológico intensivo (retinoide con receta + 3–4 peelings o microneedling + láser vascular si hay rojez)
+  addresses: [skin_texture, acne_scarring, hyperpigmentation, redness, pores, fine_lines, visual_age]
+  evidence: A
+  sources: ["Guías AAD", "Juhasz & Cohen 2020", "Van Zuuren 2019"]
+  cost_usd: "600–1500 en 6 meses"
+  frequency: "sesiones cada 4 semanas + rutina diaria"
+  horizon: "6 meses"
+  difficulty: medium
+  tier: professional
+  caution: "dermatólogo; fotoprotección estricta"
+- id: brow_redesign
+  name: Rediseño de cejas (mapeo profesional; microblading o laminado si faltan densidad o forma)
+  addresses: [brow_shape, brow_density, brow_position, eye_framing, brow_symmetry]
+  evidence: C
+  sources: ["Técnica cosmética; Gunter & Antrobus 1997 sobre posición ideal"]
+  cost_usd: "80–400"
+  frequency: "microblading cada 12–18 meses; laminado cada 6–8 semanas"
+  horizon: "inmediato"
+  difficulty: easy
+  tier: intensive
+- id: lash_lift_tint
+  name: Lifting y tinte de pestañas
+  addresses: [lash_fullness, eye_framing, eye_openness]
+  evidence: C
+  sources: ["Técnica cosmética"]
+  cost_usd: "50–120"
+  frequency: "cada 6–8 semanas"
+  horizon: "inmediato"
+  difficulty: easy
+  tier: intensive
+- id: dental_full
+  name: Plan dental completo (limpieza, blanqueamiento profesional, alineadores si hay apiñamiento, carillas solo si hay defectos)
+  addresses: [tooth_color, tooth_alignment, smile_quality, lip_support]
+  evidence: A
+  sources: ["Rossini et al. 2015", "Cochrane blanqueamiento"]
+  cost_usd: "300–5000"
+  frequency: "según plan"
+  horizon: "2 semanas (blanqueo) a 12–18 meses (alineadores)"
+  difficulty: hard
+  tier: professional
+  caution: "odontólogo"
+- id: eyewear_or_contacts
+  name: Cambio de gafas (montura por forma de cara) o pasar a lentillas si las gafas ocultan ojos y cejas
+  addresses: [eye_spacing_ratio, face_width, brow_position, facial_fifths, eye_framing]
+  evidence: C
+  sources: ["Principio óptico de encuadre"]
+  cost_usd: "50–300"
+  frequency: "una vez"
+  horizon: "inmediato"
+  difficulty: easy
+  tier: intensive
+- id: style_color_palette
+  name: Paleta de color de ropa según subtono de piel, ojos y pelo; cuello y escote que favorezcan el tercio inferior
+  addresses: [contrast, skin_tone_harmony, first_impression, neck_definition]
+  evidence: C
+  sources: ["Análisis de color (Jackson 1980); contraste facial Russell 2009"]
+  cost_usd: "0–200"
+  frequency: "una vez"
+  horizon: "inmediato"
+  difficulty: easy
+  tier: intensive
+- id: posture_neck_program
+  name: Programa de postura y cuello (chin tucks, extensión torácica, fuerza de espalda alta)
+  addresses: [jaw_definition, neck_definition, submental_angle, profile_convexity, posture]
+  evidence: B
+  sources: ["Harman et al. 2005 (postura de cabeza adelantada)"]
+  cost_usd: "0"
+  frequency: "10 min diarios"
+  horizon: "6–8 semanas"
+  difficulty: medium
+  tier: intensive
+- id: botox_pro
+  name: Toxina botulínica con médico (frente, entrecejo, patas de gallo; masetero si mandíbula muy ancha)
+  addresses: [wrinkles, fine_lines, brow_position, jaw_width, visual_age]
+  evidence: A
+  sources: ["Carruthers 2010", "Kim et al. 2005 (masetero)"]
+  cost_usd: "200–600 por sesión"
+  frequency: "cada 3–4 meses"
+  horizon: "2 semanas"
+  difficulty: medium
+  tier: professional
+  caution: "mínimamente invasivo; solo con médico cualificado; reversible en meses"
+- id: filler_pro
+  name: Ácido hialurónico con médico (mentón, mandíbula, ojeras o labios) cuando la deficiencia es clara
+  addresses: [chin_projection, jaw_definition, under_eye_hollowness, lip_fullness, midface_ratio, facial_convexity]
+  evidence: A
+  sources: ["Revisión sistemática de relleno de mentón/mandíbula (de Maio 2020)"]
+  cost_usd: "400–1200 por zona"
+  frequency: "cada 9–18 meses"
+  horizon: "inmediato"
+  difficulty: medium
+  tier: professional
+  caution: "mínimamente invasivo, no quirúrgico; solo si el percentil es extremo y con médico; reversible con hialuronidasa"
+- id: sleep_recovery_program
+  name: Sueño 7,5–9 h con horario fijo, sin pantallas 1 h antes, habitación oscura
+  addresses: [under_eye_puffiness, skin_dullness, perceived_health, visual_age]
+  evidence: A
+  sources: ["Axelsson et al. 2010 (BMJ)"]
+  cost_usd: "0"
+  frequency: "diario"
+  horizon: "2 semanas"
+  difficulty: medium
+  tier: intensive

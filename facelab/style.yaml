@@ -1,0 +1,280 @@
+# Base de conocimiento de colorimetría y estilo.
+# Estaciones: sistema de 12 (Jackson 1980 "Color Me Beautiful"; refinado en Sci/ART y en la práctica actual de análisis de color).
+# Formas de cara y cortes: manuales de peluquería y óptica (regla de compensación: el corte/montura añade lo que falta y no repite lo que sobra).
+# Expresión femenina/masculina: Russell 2009 (contraste facial), Perrett 1998 (dimorfismo), Dixson & Brooks 2013 (barba), Jones 2015 (maquillaje y contraste).
+# Todo es orientativo: la lectura de color depende de la luz y del balance de blancos de la foto.
+
+seasons:
+  invierno_profundo:
+    name: Invierno profundo
+    family: invierno
+    traits: {depth: deep, undertone: cool-neutral, chroma: clear}
+    summary: Pelo y ojos oscuros con piel de subtono frío o neutro. Aguanta el negro puro y los colores intensos y oscuros; los tonos polvorientos apagan.
+    best: [{hex: "#000000", name: negro}, {hex: "#0b1f4b", name: azul marino profundo}, {hex: "#7a0c2e", name: burdeos}, {hex: "#0f5c3a", name: verde pino}, {hex: "#4b0f6b", name: morado profundo}, {hex: "#b3123a", name: rojo cereza}, {hex: "#0e6e8c", name: petróleo}, {hex: "#c2185b", name: fucsia oscuro}, {hex: "#ffffff", name: blanco puro}, {hex: "#1f6f5f", name: esmeralda oscuro}]
+    neutrals: [{hex: "#000000", name: negro}, {hex: "#2b2b2b", name: carbón}, {hex: "#ffffff", name: blanco}, {hex: "#0b1f4b", name: marino}, {hex: "#5a5a5a", name: gris medio}]
+    avoid: [{hex: "#d2b48c", name: camel claro}, {hex: "#e0a96d", name: naranja apagado}, {hex: "#c8b560", name: mostaza}, {hex: "#f5deb3", name: beige cálido}]
+    metals: plata, platino, oro blanco
+    hair_colors: [negro azabache, castaño muy oscuro frío, reflejos borgoña]
+    makeup: [labios rojo azulado o ciruela, colorete frío, delineado negro]
+    patterns: Contrastes marcados (blanco y negro, rayas nítidas), estampados geométricos limpios.
+
+  invierno_frio:
+    name: Invierno frío
+    family: invierno
+    traits: {depth: medium, undertone: cool, chroma: clear}
+    summary: Subtono claramente frío con contraste alto entre pelo, piel y ojos. Colores puros, fríos y con contraste; nada cálido ni terroso.
+    best: [{hex: "#0b1f4b", name: marino}, {hex: "#d81b60", name: fucsia}, {hex: "#1565c0", name: azul real}, {hex: "#c62828", name: rojo azulado}, {hex: "#00897b", name: verde jade frío}, {hex: "#6a1b9a", name: violeta}, {hex: "#ffffff", name: blanco puro}, {hex: "#f8bbd0", name: rosa hielo}, {hex: "#b2ebf2", name: azul hielo}, {hex: "#000000", name: negro}]
+    neutrals: [{hex: "#000000", name: negro}, {hex: "#ffffff", name: blanco}, {hex: "#37474f", name: gris pizarra}, {hex: "#0b1f4b", name: marino}, {hex: "#9e9e9e", name: gris claro}]
+    avoid: [{hex: "#e07b39", name: naranja}, {hex: "#c8a165", name: dorado apagado}, {hex: "#8d6e3f", name: marrón cálido}, {hex: "#f5deb3", name: beige}]
+    metals: plata, platino
+    hair_colors: [negro, castaño ceniza oscuro, reflejos fríos]
+    makeup: [labios rojo frío o rosa intenso, colorete rosa frío]
+    patterns: Bloques de color contrastados, rayas marineras, cuadros en blanco y negro.
+
+  invierno_brillante:
+    name: Invierno brillante
+    family: invierno
+    traits: {depth: medium, undertone: neutral-cool, chroma: bright}
+    summary: "Ojos muy claros o brillantes frente a pelo oscuro: la característica dominante es la claridad. Colores saturados y limpios; los apagados y polvorientos restan."
+    best: [{hex: "#00bcd4", name: turquesa}, {hex: "#e91e63", name: rosa intenso}, {hex: "#1e88e5", name: azul eléctrico}, {hex: "#d50000", name: rojo puro}, {hex: "#00c853", name: verde esmeralda vivo}, {hex: "#ffea00", name: amarillo limón}, {hex: "#7c4dff", name: violeta vivo}, {hex: "#ffffff", name: blanco}, {hex: "#000000", name: negro}, {hex: "#ff4081", name: fucsia claro}]
+    neutrals: [{hex: "#000000", name: negro}, {hex: "#ffffff", name: blanco}, {hex: "#1a237e", name: marino intenso}, {hex: "#424242", name: gris oscuro}]
+    avoid: [{hex: "#bcaaa4", name: topo}, {hex: "#c5b358", name: ocre}, {hex: "#a1887f", name: marrón polvoriento}, {hex: "#9fa8a3", name: verde grisáceo}]
+    metals: plata brillante, oro blanco
+    hair_colors: [negro, castaño oscuro neutro; evitar tonos ceniza apagados]
+    makeup: [labios rojo puro o fucsia, delineado negro]
+    patterns: Bloques de color, estampados gráficos de alto contraste.
+
+  verano_claro:
+    name: Verano claro
+    family: verano
+    traits: {depth: light, undertone: cool-neutral, chroma: soft}
+    summary: "Conjunto claro y fresco: pelo rubio o castaño claro ceniza, piel clara, ojos claros. Tonos claros, suaves y fríos; el negro y los colores oscuros pesan."
+    best: [{hex: "#a7c7e7", name: azul polvo}, {hex: "#c9a9d9", name: lavanda}, {hex: "#f4c2c2", name: rosa empolvado}, {hex: "#9bc4bc", name: menta suave}, {hex: "#6d8fb3", name: azul denim claro}, {hex: "#d8a7b1", name: malva}, {hex: "#f5f5f5", name: blanco roto}, {hex: "#b0b7c6", name: gris perla}, {hex: "#7fa1c3", name: azul cielo}, {hex: "#c3b1e1", name: lila}]
+    neutrals: [{hex: "#f5f5f5", name: blanco roto}, {hex: "#b0b7c6", name: gris perla}, {hex: "#5d6d7e", name: gris azulado}, {hex: "#3c4f6b", name: marino suave}, {hex: "#d9c8c4", name: rosa topo}]
+    avoid: [{hex: "#000000", name: negro}, {hex: "#e07b39", name: naranja}, {hex: "#c8a165", name: dorado}, {hex: "#5d4037", name: marrón chocolate}]
+    metals: plata mate, oro rosa claro
+    hair_colors: [rubio ceniza, castaño claro ceniza, babylights fríos]
+    makeup: [labios rosa suave, colorete rosado, nada de negro intenso]
+    patterns: Estampados pequeños y suaves, tonos sobre tonos, rayas finas.
+
+  verano_frio:
+    name: Verano frío
+    family: verano
+    traits: {depth: medium, undertone: cool, chroma: soft}
+    summary: Subtono frío rosado con contraste medio. Colores fríos de intensidad media, suaves más que vivos; los cálidos amarillentos desentonan.
+    best: [{hex: "#5b7db1", name: azul acero}, {hex: "#9c6b98", name: ciruela suave}, {hex: "#c2607e", name: frambuesa}, {hex: "#6b9080", name: verde salvia}, {hex: "#7d8ca3", name: gris azulado}, {hex: "#d98ba6", name: rosa antiguo}, {hex: "#3f5f8a", name: azul cadete}, {hex: "#f0eff4", name: blanco suave}, {hex: "#a48fb5", name: lavanda media}, {hex: "#8b1e3f", name: vino frío}]
+    neutrals: [{hex: "#f0eff4", name: blanco suave}, {hex: "#6e7b8b", name: gris pizarra claro}, {hex: "#2f3e5c", name: marino}, {hex: "#8d8c8c", name: gris topo frío}, {hex: "#c9bfc7", name: rosa grisáceo}]
+    avoid: [{hex: "#e07b39", name: naranja}, {hex: "#c8b560", name: mostaza}, {hex: "#8d6e3f", name: camel oscuro}, {hex: "#000000", name: negro cerca de la cara}]
+    metals: plata, oro blanco, perla
+    hair_colors: [castaño ceniza, rubio oscuro frío, reflejos perla]
+    makeup: [labios rosa frambuesa o malva, colorete rosa frío]
+    patterns: Florales suaves, rayas medias, cuadros en tonos fríos.
+
+  verano_suave:
+    name: Verano suave
+    family: verano
+    traits: {depth: medium, undertone: neutral-cool, chroma: muted}
+    summary: "Conjunto de bajo contraste y colores apagados: castaño ceniza, ojos grises, verdes o avellana. Tonos velados y neutros; los colores muy puros y el negro dominan la cara."
+    best: [{hex: "#8fa3b5", name: azul grisáceo}, {hex: "#a3a380", name: verde oliva suave}, {hex: "#b5838d", name: rosa polvoriento}, {hex: "#7d8471", name: verde eucalipto}, {hex: "#9a8c98", name: malva gris}, {hex: "#6c7a89", name: azul niebla}, {hex: "#c9b7a8", name: greige}, {hex: "#5f7470", name: verde pizarra}, {hex: "#a67b8a", name: berenjena suave}, {hex: "#dcd3c9", name: piedra}]
+    neutrals: [{hex: "#c9b7a8", name: greige}, {hex: "#6c7a89", name: gris azulado}, {hex: "#3d4c5c", name: marino apagado}, {hex: "#dcd3c9", name: piedra}, {hex: "#7a6f6a", name: topo}]
+    avoid: [{hex: "#000000", name: negro}, {hex: "#ff5722", name: naranja vivo}, {hex: "#ffea00", name: amarillo vivo}, {hex: "#ffffff", name: blanco óptico}]
+    metals: plata mate, peltre, oro rosa mate
+    hair_colors: [castaño ceniza medio, rubio oscuro apagado; evitar dorados y cobres]
+    makeup: [labios malva o rosa apagado, mucho difuminado]
+    patterns: Tonos sobre tonos, texturas (lana, lino) más que estampados fuertes.
+
+  otono_suave:
+    name: Otoño suave
+    family: otoño
+    traits: {depth: medium, undertone: neutral-warm, chroma: muted}
+    summary: "Bajo contraste con tirón cálido: castaño medio dorado, ojos avellana o verdes apagados. Tonos terrosos suaves y velados; los colores fríos y brillantes lavan."
+    best: [{hex: "#b08d57", name: camel}, {hex: "#8a9a5b", name: verde musgo}, {hex: "#c98e6d", name: salmón apagado}, {hex: "#a67b5b", name: cacao claro}, {hex: "#7f9c96", name: verde jade apagado}, {hex: "#c9a66b", name: mostaza suave}, {hex: "#9c6b4a", name: teja suave}, {hex: "#e6d5b8", name: crema}, {hex: "#6e7f80", name: azul petróleo apagado}, {hex: "#b56e5a", name: terracota suave}]
+    neutrals: [{hex: "#e6d5b8", name: crema}, {hex: "#8b7d6b", name: topo cálido}, {hex: "#5c4a3d", name: marrón café}, {hex: "#a89f91", name: gris cálido}, {hex: "#4a5d4e", name: verde oscuro apagado}]
+    avoid: [{hex: "#000000", name: negro}, {hex: "#e91e63", name: fucsia}, {hex: "#1e88e5", name: azul eléctrico}, {hex: "#ffffff", name: blanco óptico}]
+    metals: oro mate, bronce, cobre envejecido
+    hair_colors: [castaño dorado medio, caramelo suave, reflejos miel]
+    makeup: [labios nude cálido o rosa terroso, colorete melocotón suave]
+    patterns: Cuadros en tonos tierra, estampados botánicos apagados, texturas.
+
+  otono_calido:
+    name: Otoño cálido
+    family: otoño
+    traits: {depth: medium, undertone: warm, chroma: medium}
+    summary: Subtono dorado o cobrizo inequívoco; pelo castaño rojizo, cobrizo o castaño dorado. Toda la gama tierra y especia; nada azulado ni rosa frío.
+    best: [{hex: "#b7410e", name: óxido}, {hex: "#c68e17", name: mostaza}, {hex: "#556b2f", name: verde oliva}, {hex: "#8b4513", name: marrón silla}, {hex: "#cd7f32", name: bronce}, {hex: "#e2725b", name: terracota}, {hex: "#006d5b", name: verde botella cálido}, {hex: "#d4a373", name: caramelo}, {hex: "#7b3f00", name: chocolate}, {hex: "#f4a460", name: arena tostada}]
+    neutrals: [{hex: "#f5e6c8", name: marfil}, {hex: "#c19a6b", name: camel}, {hex: "#5c4033", name: marrón oscuro}, {hex: "#6b6b47", name: caqui}, {hex: "#2f4f4f", name: verde pizarra oscuro}]
+    avoid: [{hex: "#000000", name: negro}, {hex: "#f8bbd0", name: rosa hielo}, {hex: "#1e88e5", name: azul eléctrico}, {hex: "#9e9e9e", name: gris frío}]
+    metals: oro amarillo, cobre, latón
+    hair_colors: [cobrizo, castaño rojizo, castaño dorado, caramelo]
+    makeup: [labios teja o coral tostado, colorete melocotón, sombras bronce]
+    patterns: Cuadros escoceses en tierras, paisley, estampados étnicos cálidos.
+
+  otono_profundo:
+    name: Otoño profundo
+    family: otoño
+    traits: {depth: deep, undertone: warm-neutral, chroma: medium}
+    summary: Pelo y ojos oscuros con piel de subtono cálido o neutro-cálido. Colores oscuros, ricos y cálidos; aguanta bastante intensidad y el negro combinado con tierras.
+    best: [{hex: "#4a0e0e", name: granate}, {hex: "#1b4332", name: verde bosque}, {hex: "#5c3317", name: chocolate}, {hex: "#b7410e", name: óxido}, {hex: "#c68e17", name: mostaza oscura}, {hex: "#0d3b4f", name: petróleo}, {hex: "#6b2d5c", name: berenjena}, {hex: "#a0522d", name: siena}, {hex: "#3d5a3e", name: verde oliva oscuro}, {hex: "#d4a373", name: caramelo}]
+    neutrals: [{hex: "#f5e6c8", name: marfil}, {hex: "#5c4033", name: marrón oscuro}, {hex: "#2f2f2f", name: negro suave}, {hex: "#8b7355", name: topo cálido}, {hex: "#1c2e3d", name: marino cálido}]
+    avoid: [{hex: "#f8bbd0", name: rosa pastel}, {hex: "#b2ebf2", name: azul hielo}, {hex: "#c3b1e1", name: lila}, {hex: "#b0b7c6", name: gris perla}]
+    metals: oro amarillo, bronce, cobre
+    hair_colors: [castaño oscuro cálido, negro castaño, reflejos caoba o cobre oscuro]
+    makeup: [labios ladrillo o vino cálido, colorete terracota]
+    patterns: Estampados ricos y oscuros (cuadros, leopardo, paisley), contraste con marfil.
+
+  primavera_clara:
+    name: Primavera clara
+    family: primavera
+    traits: {depth: light, undertone: warm-neutral, chroma: clear}
+    summary: "Conjunto claro y luminoso con tirón cálido: rubio dorado o castaño claro, piel clara con melocotón, ojos claros. Tonos claros, frescos y cálidos; nada oscuro ni pesado."
+    best: [{hex: "#ffb997", name: melocotón}, {hex: "#f7cac9", name: rosa coral claro}, {hex: "#aed9e0", name: aguamarina}, {hex: "#fff4a3", name: amarillo mantequilla}, {hex: "#b5ead7", name: menta cálida}, {hex: "#ff8a80", name: coral}, {hex: "#87ceeb", name: azul cielo cálido}, {hex: "#fffdd0", name: crema}, {hex: "#c5e384", name: verde lima suave}, {hex: "#f4b183", name: albaricoque}]
+    neutrals: [{hex: "#fffdd0", name: crema}, {hex: "#d2b48c", name: camel claro}, {hex: "#a9a9a9", name: gris cálido claro}, {hex: "#5f7c8a", name: azul grisáceo suave}, {hex: "#c8ad7f", name: arena}]
+    avoid: [{hex: "#000000", name: negro}, {hex: "#4a0e0e", name: granate}, {hex: "#37474f", name: gris pizarra}, {hex: "#6a1b9a", name: violeta oscuro}]
+    metals: oro claro, oro rosa
+    hair_colors: [rubio dorado, rubio miel, castaño claro dorado]
+    makeup: [labios coral o melocotón, colorete melocotón]
+    patterns: Florales pequeños, lunares claros, rayas finas en tonos claros.
+
+  primavera_calida:
+    name: Primavera cálida
+    family: primavera
+    traits: {depth: medium, undertone: warm, chroma: clear}
+    summary: "Subtono cálido dorado con colores claros y vivos: rubio dorado, cobrizo claro o castaño cálido, ojos claros o avellana dorada. Colores cálidos y limpios; evitar lo apagado y lo azulado."
+    best: [{hex: "#ff7f50", name: coral}, {hex: "#ffa500", name: naranja cálido}, {hex: "#40e0d0", name: turquesa cálido}, {hex: "#ffd700", name: dorado}, {hex: "#9acd32", name: verde manzana}, {hex: "#ff6347", name: tomate}, {hex: "#1e90ff", name: azul cálido claro}, {hex: "#fffdd0", name: crema}, {hex: "#d2691e", name: canela clara}, {hex: "#f0e68c", name: caqui claro}]
+    neutrals: [{hex: "#fffdd0", name: crema}, {hex: "#c19a6b", name: camel}, {hex: "#8b5a2b", name: marrón cálido medio}, {hex: "#708090", name: gris cálido}, {hex: "#3b5b7d", name: azul cálido oscuro}]
+    avoid: [{hex: "#000000", name: negro}, {hex: "#c2607e", name: frambuesa fría}, {hex: "#9a8c98", name: malva gris}, {hex: "#5d6d7e", name: gris azulado}]
+    metals: oro amarillo brillante
+    hair_colors: [rubio dorado, cobrizo claro, castaño caramelo]
+    makeup: [labios coral o naranja suave, colorete melocotón, sombras dorado]
+    patterns: Estampados alegres y claros, florales medianos, rayas de colores.
+
+  primavera_brillante:
+    name: Primavera brillante
+    family: primavera
+    traits: {depth: medium, undertone: neutral-warm, chroma: bright}
+    summary: "Alta claridad con tirón cálido: pelo oscuro o medio, ojos muy claros y luminosos. Colores vivos, saturados y ligeramente cálidos; lo polvoriento y apagado resta luz."
+    best: [{hex: "#ff4500", name: naranja rojizo}, {hex: "#00ced1", name: turquesa vivo}, {hex: "#ff1493", name: rosa vivo cálido}, {hex: "#ffd700", name: amarillo dorado}, {hex: "#32cd32", name: verde lima}, {hex: "#0077be", name: azul cobalto cálido}, {hex: "#ff6f61", name: coral vivo}, {hex: "#ffffff", name: blanco}, {hex: "#8a2be2", name: violeta cálido}, {hex: "#dc143c", name: carmesí}]
+    neutrals: [{hex: "#ffffff", name: blanco}, {hex: "#2c3e50", name: marino cálido}, {hex: "#5c4033", name: marrón oscuro}, {hex: "#c19a6b", name: camel}, {hex: "#4f4f4f", name: gris oscuro cálido}]
+    avoid: [{hex: "#9a8c98", name: malva gris}, {hex: "#a3a380", name: oliva apagado}, {hex: "#bcaaa4", name: topo}, {hex: "#c9bfc7", name: rosa grisáceo}]
+    metals: oro brillante, oro rosa
+    hair_colors: [castaño oscuro cálido, negro suave; evitar ceniza]
+    makeup: [labios coral vivo o rojo cálido, delineado marrón oscuro]
+    patterns: Bloques de color vivos, estampados gráficos, contraste alto.
+
+# Reglas de contraste personal (Russell 2009; práctica de estilismo): la ropa repite el nivel de contraste de la cara.
+contrast_rules:
+  high: Combina claros y oscuros en el mismo conjunto (camisa blanca con chaqueta marino, negro con marfil). Los conjuntos monocromos medios apagan.
+  medium: Un neutro más un color, o dos tonos con diferencia moderada. Evita el blanco óptico junto al negro puro cerca de la cara.
+  low: Tonos sobre tonos y combinaciones suaves en la misma familia. El contraste fuerte (blanco/negro) domina la cara.
+
+face_shapes:
+  oval:
+    name: Ovalada
+    criteria: Largo aproximadamente 1,4–1,6 veces el ancho; pómulos algo más anchos que mandíbula y frente; mentón redondeado.
+    haircuts:
+      masculine: [Corte clásico con laterales cortos y volumen moderado arriba (side part o quiff bajo), Crew cut con textura, Medio con raya lateral y flequillo hacia atrás]
+      feminine: [Media melena a los hombros con ondas suaves, Bob a la mandíbula con raya en medio, Largo con capas ligeras y flequillo cortina]
+      neutral: [Corte medio con textura y flequillo abierto, Mullet suave con capas, Rapado corto uniforme]
+    beard: [Barba de 3 días perfilada, Barba corta completa siguiendo la mandíbula natural]
+    glasses: [Casi cualquier montura; cuadradas o rectangulares añaden estructura, redondas suavizan; ancho igual al de la cara]
+    necklines: [Cuello camisero, cuello redondo y pico funcionan; ajustar al largo del cuello]
+    accessories: [Sin restricciones; sombreros de ala media y gorras estructuradas]
+    avoid: [Flequillos muy pesados que acortan la cara]
+  round:
+    name: Redonda
+    criteria: Largo y ancho similares; pómulos anchos; mandíbula y mentón suaves sin ángulos.
+    haircuts:
+      masculine: [Volumen y altura arriba con laterales muy cortos (pompadour o quiff alto), Undercut con raya lateral marcada, Evitar flequillo recto y cortes redondeados]
+      feminine: [Largo por debajo del hombro con capas que empiezan bajo la barbilla, Bob largo asimétrico (lob) con raya lateral, Volumen en la coronilla y flequillo lateral largo]
+      neutral: [Corte con altura arriba y laterales pegados, Capas largas con raya lateral, Moño alto o coleta alta]
+    beard: [Barba más larga en el mentón y corta en las mejillas (alarga), Perilla o barba en ancla]
+    glasses: [Monturas angulares rectangulares o cuadradas, algo más anchas que la cara; evitar redondas pequeñas]
+    necklines: [Cuello en pico y cuello camisero abierto (alargan); evitar cuello redondo cerrado y cuello alto]
+    accessories: [Pendientes largos, collares largos, sombreros con copa alta]
+    avoid: [Cortes a la altura de la barbilla, volumen en los laterales, flequillo recto]
+  square:
+    name: Cuadrada
+    criteria: Mandíbula tan ancha como los pómulos y la frente; ángulos mandibulares marcados; mentón ancho.
+    haircuts:
+      masculine: [Textura y movimiento arriba con laterales en degradado (no líneas rectas), Corte medio despeinado, Buzz cut si se quiere subrayar la angulosidad]
+      feminine: [Capas largas y ondas sueltas que suavizan la mandíbula, Lob con puntas hacia dentro por debajo de la mandíbula, Flequillo cortina o lateral]
+      neutral: [Medio con capas y raya lateral, Rizos o textura suelta alrededor de la cara, Evitar bob recto a la mandíbula]
+    beard: [Barba corta redondeada en el mentón (suaviza), Barba de 3 días uniforme; evitar cuadrar el contorno]
+    glasses: [Redondas u ovaladas, montura fina; evitar rectangulares gruesas]
+    necklines: [Cuello redondo y cuello barco (suavizan); pico moderado]
+    accessories: [Pendientes redondos o de gota, bufandas con caída suave]
+    avoid: [Bob recto a la altura de la mandíbula, líneas geométricas duras junto a la cara]
+  oblong:
+    name: Alargada
+    criteria: Largo claramente superior a 1,6 veces el ancho; frente, pómulos y mandíbula de anchura similar.
+    haircuts:
+      masculine: [Laterales con algo de volumen y poca altura arriba, Flequillo hacia delante o texturizado, Evitar pompadour alto]
+      feminine: [Flequillo recto o cortina (acorta), Media melena con volumen a los lados y ondas, Evitar largo liso sin capas]
+      neutral: [Corte medio con volumen lateral, Flequillo completo, Rizos con anchura]
+    beard: [Barba más llena en las mejillas y corta en el mentón (ensancha); evitar perilla larga]
+    glasses: [Monturas anchas y profundas (grandes), con puente bajo; evitar pequeñas y estrechas]
+    necklines: [Cuello redondo, cuello alto y cuello barco (acortan); evitar pico profundo]
+    accessories: [Pendientes de botón o aro, sombreros de ala ancha y copa baja, bufandas anchas]
+    avoid: [Altura en la coronilla, pelo largo liso sin flequillo, pico profundo]
+  heart:
+    name: Corazón
+    criteria: Frente y pómulos más anchos que la mandíbula; mentón estrecho o en punta.
+    haircuts:
+      masculine: [Medio con volumen en la nuca y laterales medios, Flequillo texturizado que reduce la frente, Evitar laterales rapados con mucha altura]
+      feminine: [Bob o lob a la altura de la mandíbula con puntas hacia fuera (equilibra), Flequillo cortina o lateral, Ondas desde la barbilla]
+      neutral: [Corte con peso en la parte baja, Flequillo abierto, Media melena con textura en puntas]
+    beard: [Barba completa que ensancha la mandíbula, Barba corta con contorno inferior amplio]
+    glasses: [Monturas más anchas abajo que arriba (aviador, redondas ligeras), sin cejas gruesas en la montura]
+    necklines: [Cuello barco y cuello redondo amplio; pico suave]
+    accessories: [Pendientes de gota o candelabro que aportan anchura abajo]
+    avoid: [Volumen en la coronilla, flequillo recto corto, monturas cat-eye pesadas]
+  diamond:
+    name: Diamante
+    criteria: Pómulos claramente más anchos que frente y mandíbula; mentón estrecho.
+    haircuts:
+      masculine: [Textura y flequillo hacia delante para ensanchar la frente, Laterales medios no rapados, Medio con ondas]
+      feminine: [Flequillo cortina o lateral, Bob a la mandíbula con volumen en las puntas, Recogidos con mechones sueltos]
+      neutral: [Flequillo, capas que empiezan en la barbilla, volumen en la nuca]
+    beard: [Barba completa de longitud media que ensancha la mandíbula]
+    glasses: [Ovaladas, cat-eye suave o con detalle en la parte superior; evitar estrechas]
+    necklines: [Cuello barco y camisero abierto]
+    accessories: [Pendientes de botón, pañuelos al cuello]
+    avoid: [Laterales rapados que acentúan los pómulos, moños tirantes]
+  triangle:
+    name: Triangular
+    criteria: Mandíbula más ancha que la frente y los pómulos.
+    haircuts:
+      masculine: [Volumen y anchura arriba (quiff, textura), laterales medios; evitar rapados que estrechan la parte alta]
+      feminine: [Volumen en la coronilla y las sienes, capas cortas arriba, flequillo lateral con cuerpo]
+      neutral: [Corte con peso arriba y ligero en la nuca, ondas desde la raíz]
+    beard: [Barba muy corta o afeitado; si hay barba, mínima en los laterales]
+    glasses: [Monturas con detalle superior (browline, cat-eye) que ensanchan la frente]
+    necklines: [Cuello en pico y cuello camisero; evitar cuello barco]
+    accessories: [Pendientes cortos, sombreros con ala]
+    avoid: [Volumen a la altura de la mandíbula, barba ancha]
+
+# Palancas visuales de expresión (no son reglas de identidad; describen qué rasgos lee la mayoría como más femeninos o masculinos).
+expression:
+  feminine:
+    summary: Mayor contraste facial (ojos y labios más oscuros que la piel), piel lisa y luminosa, cejas más altas y arqueadas, pelo con longitud o suavidad que enmarca la cara, líneas curvas en cuellos, monturas y accesorios.
+    levers: [Pelo con longitud o capas suaves alrededor de la cara, Cejas arqueadas y definidas, Pestañas y labios más marcados (contraste), Piel luminosa y uniforme, Cuellos abiertos o curvos (barco, corazón), Monturas redondeadas o cat-eye, Pendientes y collares finos, Tejidos con caída y colores algo más claros o suaves]
+    sources: [Russell 2009 Perception, Jones et al. 2015 Vision Research, Perrett 1998 Nature]
+  masculine:
+    summary: Menor contraste facial, piel mate, cejas más rectas y bajas, mandíbula subrayada por barba o por líneas rectas, pelo corto con estructura, ángulos en cuellos, monturas y accesorios.
+    levers: [Laterales cortos y estructura arriba, Cejas rectas y densas sin depilar el arco, Barba o sombra de barba que cuadra la mandíbula, Piel mate, Cuello camisero estructurado o cuello alto, Monturas rectangulares o de ceja gruesa, Reloj y accesorios de líneas rectas, Tejidos con cuerpo y colores oscuros o neutros]
+    sources: [Dixson & Brooks 2013 Evolution and Human Behavior, Russell 2009, Perrett 1998]
+  neutral:
+    summary: Equilibrio entre las dos listas; textura y proporción por encima de códigos de género.
+    levers: [Corte medio con textura, Cejas naturales peinadas, Piel cuidada sin acabado marcado, Cuello redondo o camisero relajado, Monturas ovaladas o redondas finas, Colores neutros con un acento de la paleta]
+    sources: [Práctica de estilismo]
+
+# Prendas y accesorios: qué decide cada elección.
+garment_rules:
+  shirts: El color junto a la cara manda; la primera capa (camisa, camiseta, jersey) en un color de la paleta y el escote según la forma de cara y el largo de cuello.
+  outerwear: Neutros de la paleta para chaquetas y abrigos; la estructura del hombro compensa una cara ancha (hombro suave) o estrecha (hombro marcado).
+  trousers: Menos crítico para la cara; neutros de la paleta, un tono más oscuro que la parte superior si el contraste personal es medio-alto.
+  patterns: Escala del estampado proporcional al tamaño de los rasgos; contraste del estampado igual al contraste personal.
+  glasses: Ancho de la montura igual al de la cara a la altura de las sienes; la línea superior sigue la ceja; el color en la familia del pelo o en un neutro de la paleta.
+  jewelry_metals: Metal según subtono (plata para frío, oro para cálido, ambos para neutro); tamaño proporcional a los rasgos.
+  hats: Ala y copa compensan la forma (copa alta para redonda, ala ancha para alargada).
+  hair_color: Nunca más de dos tonos respecto al natural sin cambiar cejas; el subtono del tinte sigue al de la piel.

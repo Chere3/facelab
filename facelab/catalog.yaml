@@ -1,0 +1,148 @@
+# Catálogo de medidas frontales (fase 1). Valores sin escala métrica: ratios, ángulos y %.
+# Las normas son orientativas y se citan; "none" significa que no se aplica norma en esta fase.
+# label_low / label_high describen qué significa estar por debajo / por encima del rango.
+- id: facial_thirds
+  name: Tercios faciales
+  unit: fraction
+  note: "Tercio superior usa el punto más alto de la malla como proxy del trichion (no hay landmark de línea del pelo). Fiable solo el medio y el inferior."
+  norm: {ideal: "≈0.33 cada uno", source: "canon neoclásico; Farkas 1985 encontró tercio inferior algo mayor"}
+- id: facial_fifths
+  name: Quintos faciales
+  unit: fraction
+  norm: {ideal: "≈0.20 cada uno; ojo ≈ intercantal", source: "canon neoclásico; Farkas 1985"}
+- id: facial_index
+  name: Índice facial morfológico
+  unit: index
+  formula: "(nasion→menton) / (zygion R→L) × 100"
+  norm: {ranges: {hypereuryprosopic: "<80", euryprosopic: "80–84.9", mesoprosopic: "85–89.9", leptoprosopic: "90–94.9", hyperleptoprosopic: "≥95"}, source: "Martin & Saller (índice n-gn/zy-zy)"}
+- id: fwhr
+  name: Ratio anchura/altura facial (FWHR)
+  unit: ratio
+  formula: "bizigomático / (párpado superior medio → labiale superius)"
+  norm: {mean_male: 1.90, mean_female: 1.85, sd: 0.12, source: "Carré & McCormick 2008; Lefevre et al. 2012 (aprox.)"}
+- id: intercanthal_width
+  name: Distancia intercantal
+  unit: px
+  norm: none
+- id: interpupillary_distance
+  name: Distancia interpupilar
+  unit: px
+  norm: none
+- id: biocular_width
+  name: Anchura biocular (exocantion a exocantion)
+  unit: px
+  norm: none
+- id: eye_width
+  name: Anchura de ojo (fisura palpebral) R/L
+  unit: px
+  norm: none
+- id: eye_height
+  name: Altura de fisura palpebral R/L
+  unit: px
+  norm: none
+- id: eye_aspect_ratio
+  name: Ratio altura/anchura del ojo (almendrado)
+  unit: ratio
+  norm: {typical: "0.28–0.36", source: "Farkas: fisura 30–31 mm × 10–11 mm ≈ 0.33 (aprox.)"}
+- id: canthal_tilt
+  name: Tilt cantal R/L
+  unit: deg
+  formula: "ángulo del eje exocantion–endocantion respecto a la horizontal; + = canto externo más alto"
+  norm: {typical: "+2 a +6", sd: 3, source: "Bashour 2006; Rhee et al. 2012 (aprox.)"}
+- id: eye_spacing_ratio
+  name: Ratio de separación ocular
+  unit: ratio
+  formula: "intercantal / anchura media de ojo"
+  norm: {ideal: 1.0, typical: "0.9–1.15", source: "canon neoclásico; Farkas"}
+- id: nose_width
+  name: Anchura nasal (alar)
+  unit: px
+  norm: none
+- id: nasal_height
+  name: Altura nasal (nasion→subnasale)
+  unit: px
+  norm: none
+- id: nasal_index
+  name: Índice nasal
+  unit: index
+  formula: "anchura alar / altura nasal × 100"
+  norm: {ranges: {leptorrhine: "<70", mesorrhine: "70–84.9", platyrrhine: "85–99.9", hyperplatyrrhine: "≥100"}, source: "Martin & Saller; Farkas"}
+- id: nose_to_intercanthal
+  name: Anchura nasal / intercantal
+  unit: ratio
+  norm: {ideal: 1.0, source: "canon neoclásico (anchura alar = intercantal); Farkas: la mayoría lo supera ligeramente"}
+- id: mouth_width
+  name: Anchura bucal (cheilion a cheilion)
+  unit: px
+  norm: none
+- id: mouth_to_nose
+  name: Ratio boca/nariz
+  unit: ratio
+  norm: {ideal: 1.5, typical: "1.5–1.65", source: "canon neoclásico 1.5; Farkas 1985 ≈ 1.6"}
+- id: philtrum_length
+  name: Longitud del filtrum (subnasale→labiale superius)
+  unit: px
+  norm: none
+- id: lip_ratio
+  name: Ratio labio superior / inferior (altura de vermellón)
+  unit: ratio
+  norm: {ideal: "1:1.6 (0.62)", typical: "0.5–0.8", source: "Penna et al. 2015; proporción áurea citada en literatura estética"}
+- id: lip_height_to_mouth_width
+  name: Altura total de labios / anchura bucal
+  unit: ratio
+  norm: none
+- id: commissure_tilt
+  name: Tilt de comisuras
+  unit: deg
+  formula: "ángulo medio de (stomion→cheilion) respecto a la horizontal; + = comisuras hacia arriba"
+  norm: {typical: "-2 a +4", source: "orientativo"}
+- id: lower_face_height
+  name: Altura del tercio inferior (subnasale→menton)
+  unit: px
+  norm: none
+- id: chin_height
+  name: Altura del mentón (sublabiale→menton)
+  unit: px
+  norm: none
+- id: chin_to_lower_face
+  name: Mentón / tercio inferior
+  unit: ratio
+  norm: {ideal: "≈0.5 (sublabiale divide el tercio inferior)", source: "análisis de Powell & Humphreys / Legan"}
+- id: bigonial_width
+  name: Anchura bigonial (mandíbula)
+  unit: px
+  norm: none
+- id: bizygomatic_width
+  name: Anchura bizigomática
+  unit: px
+  norm: none
+- id: jaw_to_cheek
+  name: Ratio mandíbula / pómulos (bigonial / bizigomático)
+  unit: ratio
+  norm: {typical_male: "0.75–0.85", typical_female: "0.70–0.80", source: "Farkas (bigonial ≈ 97–100 mm, bizigomático ≈ 130–140 mm)"}
+- id: chin_width_to_jaw
+  name: Anchura de mentón / bigonial
+  unit: ratio
+  norm: none
+- id: brow_position
+  name: Posición de ceja (apex→pupila / anchura de ojo)
+  unit: ratio
+  norm: {typical: "0.3–0.5 (más alto = ceja más elevada)", source: "orientativo"}
+- id: brow_tilt
+  name: Inclinación de ceja (cabeza→cola)
+  unit: deg
+  formula: "+ = cola más alta que cabeza"
+  norm: {typical: "+5 a +15", source: "orientativo"}
+- id: midface_ratio
+  name: Ratio de tercio medio (interpupilar / pupila→labiale superius)
+  unit: ratio
+  norm: {ideal: "≈1.0", source: "orientativo, usado en estética facial"}
+- id: symmetry
+  name: Simetría bilateral
+  unit: score
+  norm: {note: "índice interno 0–100; no comparable con otras herramientas"}
+- id: sagittal_angles
+  name: Ángulos sagitales estimados desde la malla 3D (nasofrontal, nasolabial, mentolabial)
+  unit: deg
+  note: "La coordenada z de MediaPipe es una estimación débil. Orientativo hasta tener reconstrucción 3D o foto de perfil."
+  norm: {nasofrontal: "115–135", nasolabial: "90–110 (M) / 95–115 (F)", mentolabial: "120–135", source: "Naini 2011; Powell & Humphreys 1984"}

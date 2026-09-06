@@ -1,0 +1,9 @@
+name: Idea
+description: Una medida, una norma, un método o una mejora de producto
+labels: [enhancement]
+body:
+  - type: textarea
+    attributes: {label: Qué propones, description: Qué mediría o qué cambiaría, y para quién.}
+    validations: {required: true}
+  - type: textarea
+    attributes: {label: Fuente, description: Si es una medida o una norma, cita el paper o el manual (autor, año).}

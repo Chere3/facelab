@@ -1,0 +1,20 @@
+# entorno
+.venv/
+__pycache__/
+*.pyc
+.python-version.local
+.DS_Store
+
+# datos personales y resultados (nunca se suben)
+samples/
+out/
+*.pdf
+.chrome-pdf/
+
+# modelos descargados
+models/*.task
+models/*.onnx
+
+# logs
+*.log
+norms/*.log

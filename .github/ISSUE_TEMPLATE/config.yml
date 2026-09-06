@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Preguntas y debate
+    url: https://github.com/Chere3/facelab/discussions
+    about: Para dudas de uso, ideas sueltas y resultados curiosos.

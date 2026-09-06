@@ -1,0 +1,37 @@
+[project]
+name = "facelab"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "claude-agent-sdk>=0.2.152",
+    "face-alignment>=1.5.0",
+    "fastapi>=0.141.1",
+    "insightface>=1.0.1",
+    "mediapipe<1",
+    "numpy>=2.4.6",
+    "onnxruntime>=1.29.0",
+    "opencv-python>=5.0.0.93",
+    "pillow>=12.3.0",
+    "pymupdf>=1.28.2",
+    "python-multipart>=0.0.32",
+    "pyyaml>=6.0.3",
+    "torch>=2.14.0",
+    "torchvision>=0.29.0",
+    "transformers>=5.16.1",
+    "uvicorn[standard]>=0.52.4",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.6",
+]
+
+[tool.ruff]
+line-length = 200
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501", "E401", "E402", "E701", "E702", "E731", "E741", "F841"]
